@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    [data-stack] { grid-template-columns: 1fr !important; }
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;letter-spacing:.03em">CKD care map</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-accent-900);background:var(--color-neutral-100);padding:7px 13px;font-weight:500">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1080px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Sheet 04</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">Complications</span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">Treating the complications of CKD</h1>
+    <p style="font-size:16px;max-width:70ch;color:var(--color-neutral-800);margin:0 0 10px">Pick a complication, then work down the tree one decision at a time.</p>
+    <p style="margin:0 0 32px;padding:10px 14px;background:var(--color-accent-100);font-size:16px;font-weight:500;color:var(--color-accent-800);display:inline-block">These complications begin to appear in CKD G3b and are common in CKD G4.</p>
+
+    <section style="border:1px solid var(--color-accent-700);background:#fff;margin-bottom:32px">
+      <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">Goals at a glance</div>
+      <div data-stack="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;padding:18px 20px">
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-family:var(--font-heading);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);margin-bottom:5px">Anemia</div>
+          <div style="font-family:var(--font-heading);font-size:19px">Correct iron deficiency first</div>
+          <div style="font-size:13px;color:var(--color-neutral-700)">ESA by nephrology if renal anemia persists</div>
+        </div>
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-family:var(--font-heading);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);margin-bottom:5px">Hyperkalemia</div>
+          <div style="font-family:var(--font-heading);font-size:22px">K &lt; 5.5 mEq/L</div>
+        </div>
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-family:var(--font-heading);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);margin-bottom:5px">CKD-MBD</div>
+          <div style="font-family:var(--font-heading);font-size:19px">Ca, P, PTH to target</div>
+          <div style="font-size:13px;color:var(--color-neutral-700)">Vitamin D &gt; 30 ng/ml — see table below</div>
+        </div>
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-family:var(--font-heading);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);margin-bottom:5px">Metabolic acidosis</div>
+          <div style="font-family:var(--font-heading);font-size:22px">HCO₃ 24–26 mEq/L</div>
+          <div style="font-size:13px;color:var(--color-neutral-700)">Start treatment if HCO₃ &lt; 22 mEq/L</div>
+        </div>
+      </div>
+    </section>
+
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px">
+      <sc-for list="{{ topics }}" as="t" hint-placeholder-count="4">
+        <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ hasTopicInverse }}" hint-placeholder-val="{{ false }}">
+      <p style="font-size:15px;color:var(--color-neutral-700);margin:0 0 32px">Pick a topic above to open its decision tree.</p>
+    </sc-if>
+
+    <sc-if value="{{ hasTopic }}" hint-placeholder-val="{{ false }}">
+
+      <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:20px">
+        <sc-for list="{{ views }}" as="v" hint-placeholder-count="2">
+          <button type="button" onClick="{{ v.pick }}" style="{{ v.style }}">{{ v.label }}</button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ stepMode }}" hint-placeholder-val="{{ true }}">
+      <section style="max-width:700px">
+        <sc-for list="{{ path }}" as="node" hint-placeholder-count="2">
+          <div>
+            <sc-if value="{{ node.showConnector }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;align-items:center;padding:4px 0">
+                <div style="width:1px;height:22px;background:var(--color-neutral-500)"></div>
+                <div style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:7px solid var(--color-neutral-500)"></div>
+                <div style="font-size:13px;color:var(--color-neutral-700);margin-top:3px">{{ node.via }}</div>
+              </div>
+            </sc-if>
+            <div style="{{ node.boxStyle }}">
+              <div style="{{ node.headStyle }}">{{ node.kicker }}</div>
+              <div style="padding:18px 20px">
+                <h3 style="font-size:21px;margin:0 0 10px">{{ node.title }}</h3>
+                <sc-for list="{{ node.lines }}" as="line" hint-placeholder-count="2">
+                  <div style="font-size:16px;display:flex;gap:9px;margin-bottom:6px"><span style="color:var(--color-accent-600);min-width:16px">{{ line.marker }}</span><span style="{{ line.style }}">{{ line.text }}</span></div>
+                </sc-for>
+                <sc-if value="{{ node.hasTable }}" hint-placeholder-val="{{ false }}">
+                  <table class="table" style="margin-top:4px">
+                    <thead>
+                      <tr>
+                        <sc-for list="{{ node.tableHead }}" as="h" hint-placeholder-count="3">
+                          <th>{{ h }}</th>
+                        </sc-for>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <sc-for list="{{ node.tableRows }}" as="row" hint-placeholder-count="2">
+                        <tr>
+                          <sc-for list="{{ row }}" as="cell" hint-placeholder-count="3">
+                            <td style="font-size:16px">{{ cell }}</td>
+                          </sc-for>
+                        </tr>
+                      </sc-for>
+                    </tbody>
+                  </table>
+                </sc-if>
+                <sc-if value="{{ node.hasLink }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ node.linkHref }}" style="display:inline-block;margin-top:10px;font-family:var(--font-heading);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:8px 13px">{{ node.linkLabel }}</a>
+                </sc-if>
+                <sc-if value="{{ node.hasOptions }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:14px;border-top:1px solid var(--color-neutral-300)">
+                    <sc-for list="{{ node.options }}" as="opt" hint-placeholder-count="2">
+                      <button type="button" onClick="{{ opt.pick }}" style="{{ opt.style }}">{{ opt.label }}</button>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="margin-top:24px">
+          <button type="button" class="btn btn-secondary" onClick="{{ reset }}">Start this tree over</button>
+        </div>
+      </section>
+      </sc-if>
+
+      <sc-if value="{{ fullMode }}" hint-placeholder-val="{{ false }}">
+        <div style="overflow-x:auto;padding:20px 4px 40px;border:1px solid var(--color-neutral-300);background:#fdfdfc">
+          <div style="display:flex;flex-direction:column;align-items:center;width:max-content;margin:0 auto">
+            <div style="{{ flowRoot.boxStyle }}">
+              <div style="{{ flowRoot.headStyle }}">{{ flowRoot.kicker }}</div>
+              <div style="padding:10px 12px">
+                <div style="font-family:var(--font-heading);font-size:14px;font-weight:700;margin:0 0 7px;line-height:1.25">{{ flowRoot.title }}</div>
+                <sc-for list="{{ flowRoot.lines }}" as="line" hint-placeholder-count="2">
+                  <div style="font-size:12px;display:flex;gap:5px;margin-bottom:3px;line-height:1.3"><span style="color:var(--color-accent-600);flex-shrink:0">{{ line.marker }}</span><span style="{{ line.style }}">{{ line.text }}</span></div>
+                </sc-for>
+                <sc-if value="{{ flowRoot.hasTable }}" hint-placeholder-val="{{ false }}">
+                  <table class="table" style="margin-top:4px;font-size:11px">
+                    <thead><tr><sc-for list="{{ flowRoot.tableHead }}" as="h" hint-placeholder-count="3"><th style="font-size:11px">{{ h }}</th></sc-for></tr></thead>
+                    <tbody><sc-for list="{{ flowRoot.tableRows }}" as="row" hint-placeholder-count="2"><tr><sc-for list="{{ row }}" as="cell" hint-placeholder-count="3"><td style="font-size:11px">{{ cell }}</td></sc-for></tr></sc-for></tbody>
+                  </table>
+                </sc-if>
+              </div>
+            </div>
+            <sc-if value="{{ flowRoot.hasChildren }}" hint-placeholder-val="{{ false }}">
+              <div style="width:1px;height:14px;background:var(--color-neutral-500)"></div>
+              <div style="display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--color-neutral-500)">
+                <sc-for list="{{ flowRoot.children }}" as="c1" hint-placeholder-count="2">
+                  <div style="display:flex;flex-direction:column;align-items:center">
+                    <div style="display:flex;flex-direction:column;align-items:center;padding:2px 0">
+                      <div style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--color-neutral-500)"></div>
+                      <div style="font-size:11px;color:var(--color-neutral-700);margin-top:2px;white-space:nowrap;max-width:170px;text-align:center">{{ c1.via }}</div>
+                    </div>
+                    <div style="{{ c1.node.boxStyle }}">
+                      <div style="{{ c1.node.headStyle }}">{{ c1.node.kicker }}</div>
+                      <div style="padding:10px 12px">
+                        <div style="font-family:var(--font-heading);font-size:14px;font-weight:700;margin:0 0 7px;line-height:1.25">{{ c1.node.title }}</div>
+                        <sc-for list="{{ c1.node.lines }}" as="line" hint-placeholder-count="2">
+                          <div style="font-size:12px;display:flex;gap:5px;margin-bottom:3px;line-height:1.3"><span style="color:var(--color-accent-600);flex-shrink:0">{{ line.marker }}</span><span style="{{ line.style }}">{{ line.text }}</span></div>
+                        </sc-for>
+                        <sc-if value="{{ c1.node.hasTable }}" hint-placeholder-val="{{ false }}">
+                          <table class="table" style="margin-top:4px;font-size:11px">
+                            <thead><tr><sc-for list="{{ c1.node.tableHead }}" as="h" hint-placeholder-count="3"><th style="font-size:11px">{{ h }}</th></sc-for></tr></thead>
+                            <tbody><sc-for list="{{ c1.node.tableRows }}" as="row" hint-placeholder-count="2"><tr><sc-for list="{{ row }}" as="cell" hint-placeholder-count="3"><td style="font-size:11px">{{ cell }}</td></sc-for></tr></sc-for></tbody>
+                          </table>
+                        </sc-if>
+                        <sc-if value="{{ c1.node.hasLink }}" hint-placeholder-val="{{ false }}">
+                          <a href="{{ c1.node.linkHref }}" style="display:inline-block;margin-top:6px;font-size:10px;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:4px 8px">{{ c1.node.linkLabel }}</a>
+                        </sc-if>
+                      </div>
+                    </div>
+                    <sc-if value="{{ c1.node.hasChildren }}" hint-placeholder-val="{{ false }}">
+                      <div style="width:1px;height:14px;background:var(--color-neutral-500)"></div>
+                      <div style="display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--color-neutral-500)">
+                        <sc-for list="{{ c1.node.children }}" as="c2" hint-placeholder-count="2">
+                          <div style="display:flex;flex-direction:column;align-items:center">
+                            <div style="display:flex;flex-direction:column;align-items:center;padding:2px 0">
+                              <div style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--color-neutral-500)"></div>
+                              <div style="font-size:11px;color:var(--color-neutral-700);margin-top:2px;white-space:nowrap;max-width:170px;text-align:center">{{ c2.via }}</div>
+                            </div>
+                            <div style="{{ c2.node.boxStyle }}">
+                              <div style="{{ c2.node.headStyle }}">{{ c2.node.kicker }}</div>
+                              <div style="padding:10px 12px">
+                                <div style="font-family:var(--font-heading);font-size:14px;font-weight:700;margin:0 0 7px;line-height:1.25">{{ c2.node.title }}</div>
+                                <sc-for list="{{ c2.node.lines }}" as="line" hint-placeholder-count="2">
+                                  <div style="font-size:12px;display:flex;gap:5px;margin-bottom:3px;line-height:1.3"><span style="color:var(--color-accent-600);flex-shrink:0">{{ line.marker }}</span><span style="{{ line.style }}">{{ line.text }}</span></div>
+                                </sc-for>
+                                <sc-if value="{{ c2.node.hasTable }}" hint-placeholder-val="{{ false }}">
+                                  <table class="table" style="margin-top:4px;font-size:11px">
+                                    <thead><tr><sc-for list="{{ c2.node.tableHead }}" as="h" hint-placeholder-count="3"><th style="font-size:11px">{{ h }}</th></sc-for></tr></thead>
+                                    <tbody><sc-for list="{{ c2.node.tableRows }}" as="row" hint-placeholder-count="2"><tr><sc-for list="{{ row }}" as="cell" hint-placeholder-count="3"><td style="font-size:11px">{{ cell }}</td></sc-for></tr></sc-for></tbody>
+                                  </table>
+                                </sc-if>
+                                <sc-if value="{{ c2.node.hasLink }}" hint-placeholder-val="{{ false }}">
+                                  <a href="{{ c2.node.linkHref }}" style="display:inline-block;margin-top:6px;font-size:10px;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:4px 8px">{{ c2.node.linkLabel }}</a>
+                                </sc-if>
+                              </div>
+                            </div>
+                            <sc-if value="{{ c2.node.hasChildren }}" hint-placeholder-val="{{ false }}">
+                              <div style="width:1px;height:14px;background:var(--color-neutral-500)"></div>
+                              <div style="display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--color-neutral-500)">
+                                <sc-for list="{{ c2.node.children }}" as="c3" hint-placeholder-count="2">
+                                  <div style="display:flex;flex-direction:column;align-items:center">
+                                    <div style="display:flex;flex-direction:column;align-items:center;padding:2px 0">
+                                      <div style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--color-neutral-500)"></div>
+                                      <div style="font-size:11px;color:var(--color-neutral-700);margin-top:2px;white-space:nowrap;max-width:170px;text-align:center">{{ c3.via }}</div>
+                                    </div>
+                                    <div style="{{ c3.node.boxStyle }}">
+                                      <div style="{{ c3.node.headStyle }}">{{ c3.node.kicker }}</div>
+                                      <div style="padding:10px 12px">
+                                        <div style="font-family:var(--font-heading);font-size:14px;font-weight:700;margin:0 0 7px;line-height:1.25">{{ c3.node.title }}</div>
+                                        <sc-for list="{{ c3.node.lines }}" as="line" hint-placeholder-count="2">
+                                          <div style="font-size:12px;display:flex;gap:5px;margin-bottom:3px;line-height:1.3"><span style="color:var(--color-accent-600);flex-shrink:0">{{ line.marker }}</span><span style="{{ line.style }}">{{ line.text }}</span></div>
+                                        </sc-for>
+                                        <sc-if value="{{ c3.node.hasTable }}" hint-placeholder-val="{{ false }}">
+                                          <table class="table" style="margin-top:4px;font-size:11px">
+                                            <thead><tr><sc-for list="{{ c3.node.tableHead }}" as="h" hint-placeholder-count="3"><th style="font-size:11px">{{ h }}</th></sc-for></tr></thead>
+                                            <tbody><sc-for list="{{ c3.node.tableRows }}" as="row" hint-placeholder-count="2"><tr><sc-for list="{{ row }}" as="cell" hint-placeholder-count="3"><td style="font-size:11px">{{ cell }}</td></sc-for></tr></sc-for></tbody>
+                                          </table>
+                                        </sc-if>
+                                        <sc-if value="{{ c3.node.hasLink }}" hint-placeholder-val="{{ false }}">
+                                          <a href="{{ c3.node.linkHref }}" style="display:inline-block;margin-top:6px;font-size:10px;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:4px 8px">{{ c3.node.linkLabel }}</a>
+                                        </sc-if>
+                                      </div>
+                                    </div>
+                                    <sc-if value="{{ c3.node.hasChildren }}" hint-placeholder-val="{{ false }}">
+                                      <div style="width:1px;height:14px;background:var(--color-neutral-500)"></div>
+                                      <div style="display:flex;gap:14px;align-items:flex-start;border-top:1px solid var(--color-neutral-500)">
+                                        <sc-for list="{{ c3.node.children }}" as="c4" hint-placeholder-count="2">
+                                          <div style="display:flex;flex-direction:column;align-items:center">
+                                            <div style="display:flex;flex-direction:column;align-items:center;padding:2px 0">
+                                              <div style="width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--color-neutral-500)"></div>
+                                              <div style="font-size:11px;color:var(--color-neutral-700);margin-top:2px;white-space:nowrap;max-width:170px;text-align:center">{{ c4.via }}</div>
+                                            </div>
+                                            <div style="{{ c4.node.boxStyle }}">
+                                              <div style="{{ c4.node.headStyle }}">{{ c4.node.kicker }}</div>
+                                              <div style="padding:10px 12px">
+                                                <div style="font-family:var(--font-heading);font-size:14px;font-weight:700;margin:0 0 7px;line-height:1.25">{{ c4.node.title }}</div>
+                                                <sc-for list="{{ c4.node.lines }}" as="line" hint-placeholder-count="2">
+                                                  <div style="font-size:12px;display:flex;gap:5px;margin-bottom:3px;line-height:1.3"><span style="color:var(--color-accent-600);flex-shrink:0">{{ line.marker }}</span><span style="{{ line.style }}">{{ line.text }}</span></div>
+                                                </sc-for>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </sc-for>
+                                      </div>
+                                    </sc-if>
+                                  </div>
+                                </sc-for>
+                              </div>
+                            </sc-if>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+    </sc-if>
+
+    <sc-if value="{{ showTargets }}" hint-placeholder-val="{{ false }}">
+      <section style="border:1px solid var(--color-neutral-400);background:#fff;margin-top:32px;max-width:700px">
+        <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">CKD-MBD targets</div>
+        <div style="padding:6px 20px 18px">
+          <table class="table">
+            <thead>
+              <tr><th style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800)">Stage</th><th style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800)">Ca (mg/dl)</th><th style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800)">P (mg/dl)</th><th style="font-family:var(--font-heading);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800)">PTH (pg/ml)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td style="font-family:var(--font-heading);font-size:18px">G3–4</td><td style="font-family:var(--font-heading);font-size:19px;font-weight:700">&gt; 8.5 – &lt; 10</td><td style="font-family:var(--font-heading);font-size:19px;font-weight:700">&lt; 4.5</td><td style="font-family:var(--font-heading);font-size:19px;font-weight:700">15 – 65</td></tr>
+              <tr><td style="font-family:var(--font-heading);font-size:18px">G5</td><td style="font-family:var(--font-heading);font-size:19px;font-weight:700">&gt; 8.5 – &lt; 10</td><td style="font-family:var(--font-heading);font-size:19px;font-weight:700">&lt; 5.0</td><td style="font-family:var(--font-heading);font-size:19px;font-weight:700">130 – 600</td></tr>
+            </tbody>
+          </table>
+          <p style="margin:12px 0 0;font-size:15px">Keep vitamin D above 30 ng/ml. <strong style="color:#98342f;font-weight:700">If Ca &gt; 10 mg/dl: reduce or stop calcium and vitamin D.</strong></p>
+        </div>
+      </section>
+    </sc-if>
+
+    <p style="margin:32px 0 0;font-size:13px;color:var(--color-neutral-700)">Adapted from Thai CKD in Adult (NST) 2022, Thai CKD-MBD (NST) 2022 and KDIGO CKD 2024.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700)">
+    For medical education. Clinical decisions remain the responsibility of the treating physician.
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const TREES = {
+  anemia: {
+    label: "Anemia",
+    start: "hb",
+    nodes: {
+      hb: { kicker: "Criterion", title: "Hb < 10 g/dl", lines: ["Send TSAT and ferritin", "Then classify by dialysis status"],
+        options: [{ label: "Non-dialysis or peritoneal dialysis", next: "nd" }, { label: "Hemodialysis", next: "hd" }] },
+      nd: { kicker: "Iron deficiency — non-dialysis / PD", title: "Iron deficient if either", lines: ["TSAT < 25% and ferritin < 300 ng/ml", "TSAT < 40% and ferritin < 100 ng/ml"],
+        options: [{ label: "Criteria met", next: "iron" }, { label: "Criteria not met", next: "other" }] },
+      hd: { kicker: "Iron deficiency — hemodialysis", title: "Iron deficient if", lines: ["TSAT < 30% and ferritin < 500 ng/ml"],
+        options: [{ label: "Criteria met", next: "iron" }, { label: "Criteria not met", next: "other" }] },
+      other: { kicker: "Not iron deficient", title: "Work up the other causes of anemia", lines: ["Blood loss — GI, gynaecological", "Hemolysis, thalassemia and other hemoglobinopathies", "B12 or folate deficiency", "Chronic inflammation, malignancy, myeloma", "Drugs and hypothyroidism"],
+        options: [{ label: "Cause found — treat it", next: "treatcause" }, { label: "No other cause — renal anemia", next: "esa" }] },
+      treatcause: { kicker: "Action", title: "Treat the identified cause", lines: ["Recheck Hb after treating it, and reassess iron status"] },
+      iron: { kicker: "Treatment", title: "Iron supplement", lines: ["Ferrous fumarate or ferrous sulfate", "Recheck Hb and iron studies"], accent: true,
+        options: [{ label: "TSAT > 40% or ferritin > 700 ng/ml", next: "stop" }, { label: "Hb still < 10 g/dl, iron now adequate", next: "esa" }] },
+      stop: { kicker: "Action", title: "Stop iron", lines: ["Iron stores are replete — withhold further supplementation"] },
+      esa: { kicker: "Referral", title: "Consult a nephrologist — renal anemia", lines: ["For the indications for erythropoiesis-stimulating agents (EPO)", "Iron should be adequate and other causes excluded first"], accent: true }
+    }
+  },
+  hyperkalemia: {
+    label: "Hyperkalemia",
+    start: "k",
+    nodes: {
+      k: { kicker: "Criterion", title: "K > 5.5 mEq/L", lines: ["Confirm, exclude pseudohyperkalemia and treat acutely if there are ECG changes"],
+        options: [{ label: "Begin first line", next: "l1" }] },
+      l1: { kicker: "First line", title: "Diet and offending drugs", lines: ["Eat low-potassium fruit and vegetables; avoid high-potassium produce", "Stop drugs that raise K — NSAIDs, TMP/SMX"], accent: true,
+        link: { href: "Nutrition.dc.html#potassium", label: "Potassium food lists →" },
+        options: [{ label: "K still > 5.5 mEq/L", next: "l2" }, { label: "K < 5.5 mEq/L", next: "goal" }] },
+      l2: { kicker: "Second line", title: "Add drug therapy", lines: ["Diuretic — furosemide or a thiazide", "Potassium binder"], accent: true,
+        options: [{ label: "K still > 5.5 mEq/L", next: "l3" }, { label: "K < 5.5 mEq/L", next: "goal" }] },
+      l3: { kicker: "Third line", title: "Stop ACEI / ARB / MRA", lines: ["Consider restarting later if there is no contraindication"], accent: true,
+        options: [{ label: "K controlled", next: "goal" }] },
+      goal: { kicker: "Goal", title: "Keep K < 5.5 mEq/L", lines: ["Recheck at the next visit, or sooner after any dose change"] }
+    }
+  },
+  mbd: {
+    label: "Hyperphosphatemia & 2° hyperparathyroidism",
+    start: "entry",
+    nodes: {
+      entry: { kicker: "Entry criteria", title: "Which abnormality is present?", lines: [],
+        table: { head: ["Stage", "High phosphate", "High PTH"], rows: [["G3–4", "P > 4.5 mg/dl", "PTH > 65 pg/ml"], ["G5", "P > 5.0 mg/dl", "PTH > 600 pg/ml"]] },
+        options: [{ label: "High phosphate", next: "p" }, { label: "High PTH", next: "pth" }] },
+      p: { kicker: "Hyperphosphatemia", title: "Diet and phosphate binders", lines: ["Advise avoiding high-phosphate food", "Choose the binder by serum calcium"],
+        link: { href: "Nutrition.dc.html#phosphorus", label: "High-phosphorus food list →" },
+        options: [{ label: "Ca < 10 mg/dl", next: "caco3" }, { label: "Ca ≥ 10 mg/dl", next: "noncal" }] },
+      caco3: { kicker: "Treatment", title: "Calcium carbonate", lines: ["Once daily to three times daily", "Take with food", "Chew or crush before swallowing"], accent: true,
+        options: [{ label: "Review against targets", next: "targets" }] },
+      noncal: { kicker: "Referral", title: "Consult a nephrologist — non-calcium binder", lines: ["Lanthanum", "Sevelamer", "Sucroferric oxyhydroxide", "Ferric citrate"], accent: true,
+        options: [{ label: "Review against targets", next: "targets" }] },
+      pth: { kicker: "2° hyperparathyroidism", title: "Correct the drivers first", numbered: true, lines: ["Hyperphosphatemia — treat as above", "Hypocalcemia < 8.5 mg/dl — calcium carbonate", "Vitamin D < 20 ng/ml — vitamin D2"],
+        options: [{ label: "Open the hyperphosphatemia flow", next: "p" }, { label: "Drivers corrected", next: "persist" }] },
+      persist: { kicker: "Reassess", title: "Persistently high PTH?", lines: ["G3–4: PTH > 65 pg/ml", "G5: PTH > 600 pg/ml"],
+        options: [{ label: "Yes — still above target", next: "calcitriol" }, { label: "No — at target", next: "targets" }] },
+      calcitriol: { kicker: "Treatment", title: "Calcitriol 0.25 – 2 mcg/day", lines: [{ text: "Reserve for G4–G5 with severe, progressive hyperparathyroidism", bold: true }, "Active vitamin D carries a risk of hypercalcemia", "Keep Ca and P to target and vitamin D > 30 ng/ml while titrating", "In G5 on dialysis, consult a nephrologist for the role of a calcimimetic"], accent: true,
+        options: [{ label: "Review against targets", next: "targets" }] },
+      targets: { kicker: "Goal", title: "Keep Ca, P and PTH to target", lines: ["See the target table below", "Vitamin D > 30 ng/ml"] }
+    }
+  },
+  acidosis: {
+    label: "Metabolic acidosis",
+    start: "hco3",
+    nodes: {
+      hco3: { kicker: "Criterion", title: "HCO₃ < 22 mEq/L", lines: ["On a stable outpatient sample"],
+        options: [{ label: "Treat", next: "supp" }] },
+      supp: { kicker: "Treatment", title: "Sodium bicarbonate supplement", lines: ["Titrate against serum HCO₃ and volume status"], accent: true,
+        options: [{ label: "Set the goal", next: "goal" }] },
+      goal: { kicker: "Goal", title: "Keep HCO₃ 24 – 26 mEq/L", lines: ["Recheck with the routine electrolyte panel"] }
+    }
+  }
+};
+
+function flowBoxStyle(accent) {
+  return "background:#fff;border:1px solid " + (accent ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";width:190px;flex-shrink:0";
+}
+function flowHeadStyle(accent) {
+  return "padding:6px 12px;border-bottom:1px solid " + (accent ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+    (accent ? "var(--color-accent-700)" : "var(--color-accent-100)") + ";color:" + (accent ? "var(--color-neutral-100)" : "var(--color-accent-800)") +
+    ";font-family:var(--font-heading);font-size:10px;letter-spacing:.1em;text-transform:uppercase";
+}
+function flowLines(lines, accent) {
+  return (lines || []).map(l => {
+    const marker = accent ? "\u2610" : "\u25CB";
+    return typeof l === "string" ? { text: l, style: "", marker: marker } : { text: l.text, style: l.bold ? "font-weight:700" : (l.style || ""), marker: marker };
+  });
+}
+function buildFlowTree(id, tree, via) {
+  const n = tree.nodes[id];
+  const children = (n.options || []).map(o => ({ via: o.label, node: buildFlowTree(o.next, tree, o.label) }));
+  return {
+    kicker: n.kicker, title: n.title, lines: flowLines(n.lines, !!n.accent),
+    hasTable: !!n.table, tableHead: n.table ? n.table.head : [], tableRows: n.table ? n.table.rows : [],
+    hasLink: !!n.link, linkHref: n.link ? n.link.href : "#", linkLabel: n.link ? n.link.label : "",
+    boxStyle: flowBoxStyle(!!n.accent), headStyle: flowHeadStyle(!!n.accent),
+    hasChildren: children.length > 0, children: children
+  };
+}
+
+function normLines(lines, numbered) {
+  return (lines || []).map((l, i) => {
+    const marker = numbered ? (i + 1) + "." : "—";
+    return typeof l === "string"
+      ? { text: l, style: "", marker: marker }
+      : { text: l.text, style: l.bold ? "font-weight:700" : (l.style || ""), marker: marker };
+  });
+}
+
+class Component extends DCLogic {
+  state = { topic: null, path: [], view: "step" };
+
+  pickTopic(key) {
+    this.setState({ topic: key, path: [{ id: TREES[key].start, via: "" }], view: "step" });
+  }
+
+  choose(index, nextId, via) {
+    this.setState(s => ({ path: s.path.slice(0, index + 1).concat([{ id: nextId, via: via }]) }));
+  }
+
+  chip(active) {
+    return "cursor:pointer;font-family:var(--font-heading);font-size:15px;padding:8px 14px;border:1px solid " +
+      (active ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (active ? "var(--color-accent-700)" : "#fff") + ";color:" + (active ? "var(--color-neutral-100)" : "var(--color-text)");
+  }
+
+  renderVals() {
+    const st = this.state;
+    const hasTopic = !!st.topic;
+    const tree = hasTopic ? TREES[st.topic] : null;
+
+    const topics = Object.keys(TREES).map(key => ({
+      label: TREES[key].label, style: this.chip(st.topic === key),
+      pick: () => this.pickTopic(key)
+    }));
+
+    if (!hasTopic) {
+      return { topics, hasTopic: false, hasTopicInverse: true, path: [], topicLabel: "", showTargets: false, reset: () => {}, views: [], stepMode: true, fullMode: false, flowRoot: null };
+    }
+
+    const views = [["step", "Step through"], ["full", "Whole tree"]].map(v => ({
+      label: v[1], style: this.chip(st.view === v[0]) + ";font-size:14px;padding:7px 12px",
+      pick: () => this.setState({ view: v[0] })
+    }));
+
+    const headStyle = (accent) => "padding:8px 18px;border-bottom:1px solid " +
+      (accent ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (accent ? "var(--color-accent-700)" : "var(--color-accent-100)") + ";color:" +
+      (accent ? "var(--color-neutral-100)" : "var(--color-accent-800)") +
+      ";font-family:var(--font-heading);font-size:13px;letter-spacing:.12em;text-transform:uppercase";
+
+    const path = st.path.map((step, i) => {
+      const n = tree.nodes[step.id];
+      if (!n) return null;
+      const last = i === st.path.length - 1;
+      return {
+        kicker: n.kicker, title: n.title, lines: normLines(n.lines, n.numbered), via: step.via,
+        hasLink: !!n.link,
+        hasTable: !!n.table,
+        tableHead: n.table ? n.table.head : [],
+        tableRows: n.table ? n.table.rows : [],
+        linkHref: n.link ? n.link.href : "#",
+        linkLabel: n.link ? n.link.label : "",
+        showConnector: i > 0,
+        hasOptions: !!(n.options && last),
+        headStyle: headStyle(!!n.accent),
+        boxStyle: "background:#fff;border:1px solid " + (last ? "var(--color-accent-700)" : "var(--color-neutral-400)"),
+        options: (n.options || []).map(o => ({
+          label: o.label,
+          style: "cursor:pointer;font-family:var(--font-body);font-size:15px;padding:8px 13px;border:1px solid var(--color-accent-600);background:var(--color-accent-100);color:var(--color-accent-900);text-align:left",
+          pick: () => this.choose(i, o.next, o.label)
+        }))
+      };
+    }).filter(Boolean);
+
+    return {
+      topics, path, hasTopic, hasTopicInverse: false,
+      topicLabel: tree.label,
+      showTargets: st.topic === "mbd",
+      views, stepMode: st.view === "step", fullMode: st.view === "full",
+      flowRoot: buildFlowTree(tree.start, tree, ""),
+      reset: () => this.setState(s => ({ path: [{ id: TREES[s.topic].start, via: "" }] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

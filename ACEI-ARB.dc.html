@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    [data-stack] { grid-template-columns: 1fr !important; }
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;letter-spacing:.03em">CKD care map</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1080px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Sheet 05a</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">ACEI / ARB dosing &amp; titration &mdash; <a href="Comorbidities.dc.html">back to Comorbidities</a></span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">ACEI and ARB in CKD</h1>
+    <p style="font-size:16px;max-width:70ch;color:var(--color-neutral-800);margin:0 0 30px">Starting and maximum doses, the adjustment for reduced kidney function, and what to do with the creatinine and potassium you check afterwards.</p>
+
+    <p style="margin:0 0 34px;padding:10px 14px;background:var(--color-accent-100);font-size:16px;font-weight:500;color:var(--color-accent-800);display:inline-block">Check Cr and K within 2&ndash;4 weeks of starting or increasing the dose.</p>
+
+    <section style="border:1px solid var(--color-neutral-400);background:#fff;margin-bottom:28px">
+      <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Dosing &mdash; ACE inhibitors</div>
+      <div style="overflow-x:auto;padding:6px 20px 16px">
+        <table class="table" style="min-width:620px">
+          <thead>
+            <tr>
+              <th style="width:22%">Drug</th>
+              <th style="width:16%">Starting dose (mg/day)</th>
+              <th style="width:16%">Maximum dose (mg/day)</th>
+              <th>Adjustment in CKD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:500">Enalapril <span class="text-muted">*</span></td><td>5</td><td>40</td><td>CrCl &le; 30 ml/min: reduce the starting dose to 2.5 mg</td></tr>
+            <tr><td style="font-weight:500">Lisinopril</td><td>10</td><td>40</td><td>CrCl 10&ndash;30 ml/min: reduce the starting dose by 50%<br>CrCl &lt; 10 ml/min: reduce the starting dose to 2.5 mg</td></tr>
+            <tr><td style="font-weight:500">Perindopril arginine</td><td>5</td><td>10</td><td>CrCl &lt; 30 ml/min: reduce the starting dose to 2.5 mg</td></tr>
+            <tr><td style="font-weight:500">Ramipril</td><td>2.5</td><td>20</td><td>CrCl &lt; 40 ml/min: reduce the starting dose to 1.25 mg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="border:1px solid var(--color-neutral-400);background:#fff;margin-bottom:28px">
+      <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Dosing &mdash; angiotensin receptor blockers</div>
+      <div style="overflow-x:auto;padding:6px 20px 16px">
+        <table class="table" style="min-width:620px">
+          <thead>
+            <tr>
+              <th style="width:22%">Drug</th>
+              <th style="width:16%">Starting dose (mg/day)</th>
+              <th style="width:16%">Maximum dose (mg/day)</th>
+              <th>Adjustment in CKD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:500">Azilsartan</td><td>20 &ndash; 80</td><td>80</td><td>No dose adjustment needed</td></tr>
+            <tr><td style="font-weight:500">Candesartan</td><td>16</td><td>32</td><td>CrCl &le; 30 ml/min: AUC and C<sub>max</sub> double</td></tr>
+            <tr><td style="font-weight:500">Fimasartan</td><td>60</td><td>120</td><td>CrCl &le; 30 ml/min: reduce the starting dose to 30 mg</td></tr>
+            <tr><td style="font-weight:500">Irbesartan</td><td>150</td><td>150 &ndash; 300</td><td>No dose adjustment needed</td></tr>
+            <tr><td style="font-weight:500">Losartan <span class="text-muted">*</span></td><td>25 &ndash; 50</td><td>100</td><td>No dose adjustment needed</td></tr>
+            <tr><td style="font-weight:500">Olmesartan</td><td>20</td><td>40</td><td>CrCl &lt; 40 ml/min: no change to the starting dose<br>CrCl &lt; 20 ml/min: AUC triples</td></tr>
+            <tr><td style="font-weight:500">Telmisartan</td><td>40</td><td>80</td><td>No dose adjustment needed</td></tr>
+            <tr><td style="font-weight:500">Valsartan</td><td>80</td><td>320</td><td>CrCl &lt; 30 ml/min: no dosing data &mdash; use with caution</td></tr>
+          </tbody>
+        </table>
+        <p style="margin:12px 0 0;font-size:13px;color:var(--color-neutral-700)">* On the Thai National List of Essential Medicines. Adapted from Thai CKD 2022.</p>
+      </div>
+    </section>
+
+    <section style="border:1px solid var(--color-neutral-400);background:#fff;margin-bottom:28px">
+      <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Creatinine rise after starting or titrating</div>
+      <div style="overflow-x:auto;padding:6px 20px 16px">
+        <table class="table" style="min-width:600px">
+          <thead>
+            <tr><th style="width:22%">Rise in Cr</th><th>What to do with the ACEI / ARB</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-family:var(--font-heading);font-size:19px">&lt; 30%</td><td>Continue &mdash; the dose may be increased up to the maximum</td></tr>
+            <tr><td style="font-family:var(--font-heading);font-size:19px">30 &ndash; 50%</td><td>Reduce the dose by 50% if no other cause is found, and consider increasing it again once the Cr has fallen</td></tr>
+            <tr><td style="font-family:var(--font-heading);font-size:19px;color:#7d2a26">&gt; 50%</td><td><strong style="color:#7d2a26">Stop the drug</strong> if no other cause is found; consider restarting at a low dose once the Cr has fallen</td></tr>
+          </tbody>
+        </table>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--color-neutral-100)">
+          <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:8px">Always look for another cause first</div>
+          <ul style="margin:0;padding-left:20px;font-size:16px;display:grid;gap:6px">
+            <li>Volume depletion or heart failure</li>
+            <li>NSAIDs or herbal medicines</li>
+            <li>Renal artery stenosis &mdash; <span class="text-muted">very rare; order doppler ultrasound of the renal arteries only where there is an indication for angioplasty, such as heart failure or a rapidly progressive eGFR decline</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section style="border:1px solid var(--color-neutral-400);background:#fff">
+      <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Potassium after starting or titrating</div>
+      <div style="padding:18px 20px">
+        <div style="font-family:var(--font-heading);font-size:22px;margin-bottom:12px">K &gt; 5.5 mEq/L</div>
+        <div data-stack style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+          <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:6px">Look for another cause</div>
+            <p style="margin:0;font-size:16px">NSAIDs; high-potassium fruit and vegetables</p>
+            <a href="Nutrition.dc.html#potassium" style="display:inline-block;margin-top:10px;font-family:var(--font-heading);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:8px 13px">Potassium food lists &rarr;</a>
+          </div>
+          <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:6px">Correct it</div>
+            <ul style="margin:0;padding-left:18px;font-size:16px;display:grid;gap:6px">
+              <li>Restrict the food and drugs above</li>
+              <li>Diuretic &mdash; furosemide or a thiazide</li>
+              <li>Potassium binder</li>
+            </ul>
+          </div>
+          <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:6px">The drug itself</div>
+            <p style="margin:0 0 10px;font-size:16px">Do not reduce or stop the ACEI / ARB.</p>
+            <p style="margin:0;font-size:16px;padding:10px 12px;background:#fbecea;border-left:3px solid #98342f;color:#7d2a26"><strong>Except K &ge; 6.0 mEq/L</strong> &mdash; hold the drug, lower the potassium first, then consider restarting once K is below 5.0 mEq/L.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p style="margin:32px 0 0;font-size:13px;color:var(--color-neutral-700)">Adapted from Clinical Practice Recommendations for Evaluation and Management of CKD in Adults (Thai) 2022, and Thai CKD 2022. Check doses against the current label before prescribing.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700)">
+    For medical education. Clinical decisions remain the responsibility of the treating physician.
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;letter-spacing:.03em">CKD care map</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-accent-900);background:var(--color-neutral-100);padding:7px 13px;font-weight:500">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1080px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Sheet 06</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">Drug dosing lookup</span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">Drug dosing by renal function</h1>
+    <p style="font-size:16px;max-width:70ch;color:var(--color-neutral-800);margin:0 0 30px">Search a drug to see how the dose changes with CrCl or eGFR. Covers diabetes, hypertension and antibiotic drugs commonly used in CKD.</p>
+
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:16px">
+      <input type="text" value="{{ query }}" onChange="{{ onQuery }}" placeholder="Search a drug name…" style="flex:1;min-width:220px;max-width:420px;font-size:16px;padding:10px 14px;border:1px solid var(--color-neutral-400);background:#fff;font-family:var(--font-body)">
+      <div style="display:flex;gap:5px;flex-wrap:wrap">
+        <sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+          <button type="button" onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{ isAbx }}" hint-placeholder-val="{{ false }}">
+      <div style="border:1px solid var(--color-neutral-400);background:#fff;margin-bottom:24px">
+        <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">CrCl calculator (Cockcroft-Gault)</div>
+        <div style="padding:18px 20px;display:flex;gap:24px;flex-wrap:wrap;align-items:end">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;flex:1;min-width:280px">
+            <label style="display:grid;gap:5px">
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Age (yr)</span>
+              <input type="number" min="18" max="120" value="{{ age }}" onChange="{{ onAge }}" placeholder="65" style="font-size:16px;padding:9px 11px;border:1px solid var(--color-neutral-400);background:#fff">
+            </label>
+            <div>
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);display:block;margin-bottom:6px">Sex</span>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+                <button type="button" onClick="{{ pickMale }}" style="{{ maleStyle }}">Male</button>
+                <button type="button" onClick="{{ pickFemale }}" style="{{ femaleStyle }}">Female</button>
+              </div>
+            </div>
+            <label style="display:grid;gap:5px">
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Weight (kg)</span>
+              <input type="number" min="20" step="0.1" value="{{ weight }}" onChange="{{ onWeight }}" placeholder="65" style="font-size:16px;padding:9px 11px;border:1px solid var(--color-neutral-400);background:#fff">
+            </label>
+            <label style="display:grid;gap:5px">
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Creatinine (mg/dL)</span>
+              <input type="number" min="0.1" step="0.01" value="{{ scr }}" onChange="{{ onScr }}" placeholder="1.2" style="font-size:16px;padding:9px 11px;border:1px solid var(--color-neutral-400);background:#fff">
+            </label>
+          </div>
+          <sc-if value="{{ hasCrcl }}" hint-placeholder-val="{{ false }}">
+            <div style="flex:none;padding:10px 20px;background:var(--color-accent-700);color:var(--color-neutral-100)">
+              <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.85">CrCl</div>
+              <div style="font-family:var(--font-heading);font-size:30px;line-height:1.1">{{ crclText }}</div>
+              <div style="font-size:12px">ml/min</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </sc-if>
+
+    <a href="Statin-Dose.dc.html" style="display:inline-block;margin-bottom:24px;font-size:14px;text-decoration:none;color:var(--color-accent-700)">Full lipid-lowering drug table (incl. non-statin agents and triglyceride-lowering drugs) &rarr;</a>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <sc-for list="{{ results }}" as="d" hint-placeholder-count="4">
+        <section style="border:1px solid var(--color-neutral-400);background:#fff">
+          <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+            <span style="font-family:var(--font-heading);font-size:19px;color:var(--color-accent-800)">{{ d.name }}</span>
+            <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">{{ d.classLabel }}</span>
+          </div>
+          <div style="padding:14px 20px 18px">
+            <div style="font-size:15px;margin-bottom:12px"><strong style="font-family:var(--font-heading);font-weight:700">Usual dose:</strong> {{ d.usual }}</div>
+            <table class="table">
+              <thead><tr><th>{{ d.bandHeader }}</th><th>Dose</th></tr></thead>
+              <tbody>
+                <sc-for list="{{ d.doses }}" as="row" hint-placeholder-count="2">
+                  <tr><td style="font-family:var(--font-heading);font-size:15px;white-space:nowrap">{{ row.band }}</td><td style="font-size:15px">{{ row.dose }}</td></tr>
+                </sc-for>
+              </tbody>
+            </table>
+            <sc-if value="{{ d.hasNote }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:10px 0 0;font-size:14px;color:var(--color-neutral-700)">{{ d.note }}</p>
+            </sc-if>
+          </div>
+        </section>
+      </sc-for>
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size:15px;color:var(--color-neutral-700)">No drug matches "{{ query }}".</p>
+      </sc-if>
+    </div>
+
+    <p style="margin:32px 0 0;font-size:13px;color:var(--color-neutral-700)">Dose bands are adapted from standard renal drug-dosing references (e.g. Sanford Guide, product labelling) and simplified for outpatient use. Always confirm against the current label or a pharmacist before prescribing.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700)">
+    For medical education. Clinical decisions remain the responsibility of the treating physician.
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const DRUGS = [
+  { name: "Metformin", cat: "dm", classLabel: "Biguanide", bandHeader: "eGFR (ml/min/1.73m²)", usual: "500–1,000 mg twice daily with meals (max 2,550 mg/day)",
+    doses: [["≥ 45", "Usual dose, max 2,000 mg/day"], ["30 – 44", "Max 1,000 mg/day; do not start new therapy"], ["< 30", "Avoid"]] },
+  { name: "Glipizide", cat: "dm", classLabel: "Sulfonylurea", bandHeader: "eGFR (ml/min/1.73m²)", usual: "5 mg once daily before breakfast (max 20 mg/day)",
+    doses: [["Any stage", "No fixed reduction; start low, hypoglycemia risk rises as eGFR falls"]] },
+  { name: "Gliclazide", cat: "dm", classLabel: "Sulfonylurea", bandHeader: "eGFR (ml/min/1.73m²)", usual: "40–80 mg once or twice daily (MR: 30–120 mg once daily)",
+    doses: [["≥ 30", "Usual dose"], ["< 30", "Reduce dose, monitor closely"], ["< 15", "Avoid"]] },
+  { name: "Sitagliptin", cat: "dm", classLabel: "DPP-4 inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "100 mg once daily",
+    doses: [["≥ 45", "100 mg once daily"], ["30 – 44", "50 mg once daily"], ["< 30 or dialysis", "25 mg once daily"]] },
+  { name: "Linagliptin", cat: "dm", classLabel: "DPP-4 inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "5 mg once daily",
+    doses: [["Any stage", "5 mg once daily — no adjustment needed"]] },
+  { name: "Vildagliptin", cat: "dm", classLabel: "DPP-4 inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "50 mg twice daily",
+    doses: [["≥ 50", "50 mg twice daily"], ["< 50", "50 mg once daily"]] },
+  { name: "Empagliflozin", cat: "dm", classLabel: "SGLT2 inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "10 mg once daily (up to 25 mg for glycemic indication)",
+    doses: [["≥ 20", "10 mg once daily; continue for kidney/heart protection"], ["< 20", "Do not initiate; glycemic benefit is lost below eGFR ~45"]],
+    note: "May continue in patients already established on treatment for CKD or heart failure — follow specialist advice." },
+  { name: "Dapagliflozin", cat: "dm", classLabel: "SGLT2 inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "10 mg once daily",
+    doses: [["≥ 25", "10 mg once daily; continue for CKD/heart-failure benefit"], ["< 25", "Do not initiate"]] },
+  { name: "Insulin (all types)", cat: "dm", classLabel: "Insulin", bandHeader: "eGFR (ml/min/1.73m²)", usual: "Individualized — titrate to glucose targets",
+    doses: [["≥ 10", "Usual dose, titrate to glucose"], ["< 10", "Reduce dose by about 25%"]],
+    note: "Requirement typically falls as renal clearance declines — monitor closely for hypoglycemia." },
+
+  { name: "Enalapril", cat: "htn", classLabel: "ACE inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "5–20 mg once or twice daily (max 40 mg/day)",
+    doses: [["≥ 30", "Usual dose"], ["< 30", "Start at half the usual dose, titrate slowly"]],
+    note: "Monitor potassium and creatinine after starting or up-titrating." },
+  { name: "Lisinopril", cat: "htn", classLabel: "ACE inhibitor", bandHeader: "eGFR (ml/min/1.73m²)", usual: "10–20 mg once daily (max 40 mg/day)",
+    doses: [["≥ 30", "Usual dose"], ["< 30", "Start at half the usual dose, titrate slowly"]] },
+  { name: "Losartan", cat: "htn", classLabel: "ARB", bandHeader: "eGFR (ml/min/1.73m²)", usual: "50 mg once daily (max 100 mg/day)",
+    doses: [["Any stage", "No fixed reduction required"]],
+    note: "Monitor potassium and creatinine closely once eGFR falls below 30." },
+  { name: "Valsartan", cat: "htn", classLabel: "ARB", bandHeader: "eGFR (ml/min/1.73m²)", usual: "80–160 mg once daily (max 320 mg/day)",
+    doses: [["Any stage", "No fixed reduction required"]],
+    note: "Monitor potassium and creatinine closely once eGFR falls below 30." },
+  { name: "Amlodipine", cat: "htn", classLabel: "Calcium channel blocker", bandHeader: "eGFR (ml/min/1.73m²)", usual: "5 mg once daily (max 10 mg/day)",
+    doses: [["Any stage", "No dose adjustment needed"]] },
+  { name: "Hydrochlorothiazide", cat: "htn", classLabel: "Thiazide diuretic", bandHeader: "eGFR (ml/min/1.73m²)", usual: "25 mg once daily",
+    doses: [["≥ 30", "Usual dose"], ["< 30", "Ineffective — switch to a loop diuretic"]] },
+  { name: "Furosemide", cat: "htn", classLabel: "Loop diuretic", bandHeader: "eGFR (ml/min/1.73m²)", usual: "20–40 mg once or twice daily, titrate to effect",
+    doses: [["Any stage", "No dose cap; higher doses are often needed as eGFR falls"]] },
+  { name: "Spironolactone", cat: "htn", classLabel: "Mineralocorticoid antagonist", bandHeader: "eGFR (ml/min/1.73m²)", usual: "25 mg once daily (max 100 mg/day for hypertension)",
+    doses: [["30 – 59", "Use with caution, frequent potassium checks"], ["< 30", "Avoid — hyperkalemia risk"]] },
+  { name: "Atenolol", cat: "htn", classLabel: "Beta blocker", bandHeader: "eGFR (ml/min/1.73m²)", usual: "50 mg once daily (max 100 mg/day)",
+    doses: [["≥ 35", "Usual dose"], ["15 – 35", "50% of usual dose"], ["< 15", "25% of usual dose"]] },
+  { name: "Metoprolol", cat: "htn", classLabel: "Beta blocker", bandHeader: "eGFR (ml/min/1.73m²)", usual: "50–100 mg once or twice daily (max 400 mg/day)",
+    doses: [["Any stage", "No adjustment required — hepatically cleared"]] },
+
+  { name: "Amoxicillin", cat: "abx", classLabel: "Penicillin", bandHeader: "CrCl (ml/min)", usual: "500 mg every 8 h (or 875 mg every 12 h)",
+    doses: [["≥ 30", "Usual dose"], ["10 – 29", "Usual dose every 12 h"], ["< 10", "Usual dose every 24 h"]] },
+  { name: "Amoxicillin-clavulanate", cat: "abx", classLabel: "Penicillin/BLI", bandHeader: "CrCl (ml/min)", usual: "875/125 mg every 12 h",
+    doses: [["≥ 30", "Usual dose"], ["10 – 29", "Usual dose every 12 h"], ["< 10", "Usual dose every 24 h"]] },
+  { name: "Ciprofloxacin", cat: "abx", classLabel: "Fluoroquinolone", bandHeader: "CrCl (ml/min)", usual: "500–750 mg every 12 h",
+    doses: [["≥ 50", "500 – 750 mg every 12 h"], ["30 – 49", "250 – 500 mg every 12 h"], ["< 30", "250 – 500 mg every 18 – 24 h"]] },
+  { name: "Levofloxacin", cat: "abx", classLabel: "Fluoroquinolone", bandHeader: "CrCl (ml/min)", usual: "500–750 mg once daily",
+    doses: [["≥ 50", "Usual dose"], ["20 – 49", "Usual loading dose, then half dose every 24 h"], ["< 20", "Further interval extension — seek advice"]] },
+  { name: "Trimethoprim-sulfamethoxazole", cat: "abx", classLabel: "Folate antagonist", bandHeader: "CrCl (ml/min)", usual: "1 DS tablet (160/800 mg) every 12 h",
+    doses: [["≥ 30", "Usual dose"], ["15 – 29", "Half the usual dose"], ["< 15", "Avoid unless on dialysis"]] },
+  { name: "Meropenem", cat: "abx", classLabel: "Carbapenem", bandHeader: "CrCl (ml/min)", usual: "1 g every 8 h",
+    doses: [["≥ 50", "Usual dose"], ["26 – 50", "Usual dose every 12 h"], ["10 – 25", "Half dose every 12 h"], ["< 10", "Half dose every 24 h"]] },
+  { name: "Piperacillin-tazobactam", cat: "abx", classLabel: "Penicillin/BLI", bandHeader: "CrCl (ml/min)", usual: "4.5 g every 8 h",
+    doses: [["≥ 40", "Usual dose"], ["20 – 40", "Reduced dose every 8 h"], ["< 20", "Reduced dose every 12 h"]] },
+  { name: "Nitrofurantoin", cat: "abx", classLabel: "Urinary antiseptic", bandHeader: "CrCl (ml/min)", usual: "100 mg twice daily",
+    doses: [["≥ 30", "Usual dose"], ["< 30", "Avoid — ineffective and risk of toxicity"]] },
+  { name: "Vancomycin (IV)", cat: "abx", classLabel: "Glycopeptide", bandHeader: "CrCl (ml/min)", usual: "15–20 mg/kg every 8–12 h (per levels)",
+    doses: [["Any level", "Individualized dosing with level monitoring — extend the interval as renal function falls"]],
+    note: "Consult a pharmacist or nephrologist; loading dose is unchanged." },
+  { name: "Doxycycline", cat: "abx", classLabel: "Tetracycline", bandHeader: "CrCl (ml/min)", usual: "100 mg every 12 h",
+    doses: [["Any stage", "No adjustment required"]] },
+  { name: "Azithromycin", cat: "abx", classLabel: "Macrolide", bandHeader: "CrCl (ml/min)", usual: "500 mg on day 1, then 250 mg once daily",
+    doses: [["Any stage", "No adjustment required"]] },
+
+  { name: "Atorvastatin", cat: "dlp", classLabel: "Statin", bandHeader: "CKD stage", usual: "Start 10–20 mg once daily",
+    doses: [["Stage 1 – 2", "40 – 80 mg/day"], ["Stage 3a", "40 – 80 mg/day"], ["Stage 3b – 5", "20 – 40 mg/day"], ["Transplant", "20 mg/day"]] },
+  { name: "Rosuvastatin", cat: "dlp", classLabel: "Statin", bandHeader: "CKD stage", usual: "Start 10 mg once daily",
+    doses: [["Stage 1 – 2", "40 mg/day"], ["Stage 3a", "20 mg/day"], ["Stage 3b – 5", "10 mg/day"], ["Transplant", "5 mg/day"]] },
+  { name: "Simvastatin", cat: "dlp", classLabel: "Statin", bandHeader: "CKD stage", usual: "Start 10–20 mg once daily",
+    doses: [["Stage 1 – 2", "40 mg/day"], ["Stage 3a", "40 mg/day"], ["Stage 3b – 5", "20 mg/day"], ["Transplant", "20 mg/day"]],
+    note: "Caution — see interaction warnings (verapamil/diltiazem, amlodipine, itraconazole, ketoconazole, gemfibrozil)." },
+  { name: "Pravastatin", cat: "dlp", classLabel: "Statin", bandHeader: "CKD stage", usual: "Start 20–40 mg once daily",
+    doses: [["Stage 1 – 2", "40 mg/day"], ["Stage 3a", "40 mg/day"], ["Stage 3b – 5", "20 mg/day"], ["Transplant", "20 mg/day"]] },
+  { name: "Fluvastatin", cat: "dlp", classLabel: "Statin", bandHeader: "CKD stage", usual: "Start 20–40 mg once daily",
+    doses: [["Stage 1 – 2", "80 mg/day"], ["Stage 3a", "80 mg/day"], ["Stage 3b – 5", "ไม่มีข้อมูล"], ["Transplant", "80 mg/day"]] },
+  { name: "Pitavastatin", cat: "dlp", classLabel: "Statin", bandHeader: "CKD stage", usual: "Start 1–2 mg once daily",
+    doses: [["Stage 1 – 2", "4 mg/day"], ["Stage 3a", "4 mg/day"], ["Stage 3b – 5", "2 mg/day"], ["Transplant", "ไม่มีข้อมูล"]] },
+  { name: "Ezetimibe", cat: "dlp", classLabel: "Non-statin — cholesterol absorption inhibitor", bandHeader: "CKD stage", usual: "10 mg once daily",
+    doses: [["Any stage", "10 mg/day"]] },
+  { name: "Fenofibrate", cat: "dlp", classLabel: "Fibrate", bandHeader: "CKD stage", usual: "Start 100–200 mg once daily (formulation-dependent)",
+    doses: [["Stage 1 – 2", "300 mg/day"], ["Stage 3a", "100 mg/day"], ["Stage 3b – 5 / Transplant", "ไม่ควรใช้"]] },
+  { name: "Gemfibrozil", cat: "dlp", classLabel: "Fibrate", bandHeader: "CKD stage", usual: "600 mg twice daily",
+    doses: [["Stage 1 – 2 / 3a", "1,200 mg/day"], ["Stage 3b – 5 / Transplant", "600 mg/day"]],
+    note: "Do not combine with a statin." }
+];
+
+class Component extends DCLogic {
+  state = { query: "", cat: "all", age: "", sex: "F", weight: "", scr: "" };
+
+  chip(active) {
+    return "cursor:pointer;font-family:var(--font-heading);font-size:14px;padding:7px 13px;border:1px solid " +
+      (active ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (active ? "var(--color-accent-700)" : "#fff") + ";color:" + (active ? "var(--color-neutral-100)" : "var(--color-text)");
+  }
+
+  swatch(active) {
+    return "cursor:pointer;font-family:var(--font-heading);font-size:14px;padding:9px;border:1px solid " +
+      (active ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (active ? "var(--color-accent-700)" : "#fff") + ";color:" + (active ? "var(--color-neutral-100)" : "var(--color-text)");
+  }
+
+  renderVals() {
+    const st = this.state;
+    const catList = [["all", "All"], ["dm", "Diabetes"], ["htn", "Hypertension"], ["dlp", "Dyslipidemia"], ["abx", "Antibiotic"]];
+    const cats = catList.map(c => ({ label: c[1], style: this.chip(st.cat === c[0]), pick: () => this.setState({ cat: c[0] }) }));
+
+    const age = parseFloat(st.age), weight = parseFloat(st.weight), scr = parseFloat(st.scr);
+    const hasCrcl = !!(age > 0 && weight > 0 && scr > 0);
+    let crclText = "";
+    if (hasCrcl) {
+      let crcl = ((140 - age) * weight) / (72 * scr);
+      if (st.sex === "F") crcl *= 0.85;
+      crclText = crcl.toFixed(0);
+    }
+
+    const q = st.query.trim().toLowerCase();
+    const results = DRUGS
+      .filter(d => (st.cat === "all" || d.cat === st.cat))
+      .filter(d => !q || d.name.toLowerCase().includes(q))
+      .map(d => ({
+        name: d.name, classLabel: d.classLabel, bandHeader: d.bandHeader, usual: d.usual,
+        doses: d.doses.map(row => ({ band: row[0], dose: row[1] })),
+        hasNote: !!d.note, note: d.note || ""
+      }));
+
+    return {
+      query: st.query, onQuery: (e) => this.setState({ query: e.target.value }),
+      cats, results, noResults: results.length === 0,
+      isAbx: st.cat === "abx",
+      age: st.age, onAge: e => this.setState({ age: e.target.value }),
+      weight: st.weight, onWeight: e => this.setState({ weight: e.target.value }),
+      scr: st.scr, onScr: e => this.setState({ scr: e.target.value }),
+      maleStyle: this.swatch(st.sex === "M"), femaleStyle: this.swatch(st.sex === "F"),
+      pickMale: () => this.setState({ sex: "M" }), pickFemale: () => this.setState({ sex: "F" }),
+      hasCrcl, crclText
+    };
+  }
+}
+
+</script>
+</body>
+</html>

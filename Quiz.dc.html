@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;letter-spacing:.03em">CKD care map</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-accent-900);background:var(--color-neutral-100);padding:7px 13px;font-weight:500">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:840px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Self-check</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">Eight OPD decisions</span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">Short cases from the care map</h1>
+    <p style="font-size:16px;color:var(--color-neutral-800);margin:0 0 24px">Answer, then read why.</p>
+
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:32px;padding:14px 20px;border:1px solid var(--color-neutral-400);background:#fff">
+      <div style="font-family:var(--font-heading);font-size:24px">{{ scoreLabel }}</div>
+      <div style="font-size:14px;color:var(--color-neutral-700);margin-right:auto">{{ answeredLabel }}</div>
+      <button type="button" class="btn btn-secondary" onClick="{{ reset }}">Reset</button>
+    </div>
+
+    <div style="display:grid;gap:24px">
+      <sc-for list="{{ questions }}" as="q" hint-placeholder-count="8">
+        <section style="border:1px solid var(--color-neutral-400);background:#fff">
+          <div style="padding:8px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">{{ q.number }}</div>
+          <div style="padding:20px 22px">
+            <h3 style="font-size:20px;margin:0 0 16px;line-height:1.3">{{ q.stem }}</h3>
+            <div style="display:grid;gap:6px">
+              <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                <button type="button" onClick="{{ opt.pick }}" style="{{ opt.style }}">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ q.answered }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--color-neutral-300)">
+                <div style="font-family:var(--font-heading);font-size:17px;margin-bottom:5px;color:{{ q.verdictColor }}">{{ q.verdict }}</div>
+                <p style="margin:0;font-size:16px">{{ q.explanation }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </section>
+      </sc-for>
+    </div>
+
+    <p style="margin:32px 0 0;font-size:13px;color:var(--color-neutral-700)">Adapted from Thai CKD in Adult (NST) 2022, Thai CKD-MBD (NST) 2022, KDIGO CKD 2024 and Dyslipidemia (RCPT) 2024.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700)">
+    For medical education. Clinical decisions remain the responsibility of the treating physician.
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const QUESTIONS = [
+  {
+    stem: "A 58-year-old man has eGFR 72 ml/min/1.73 m² on two occasions 4 months apart, with UACR 180 mg/g. What is his stage?",
+    options: ["No CKD — eGFR is above 60", "CKD G2 A2", "CKD G3a A2", "CKD G2 A1"],
+    answer: 1,
+    explanation: "eGFR above 60 does not exclude CKD. A marker of kidney damage lasting more than 3 months is enough: UACR 180 mg/g is category A2, and eGFR 60–89 is G2."
+  },
+  {
+    stem: "Which patient with newly diagnosed CKD needs an ultrasound KUB?",
+    options: ["Every patient, to document kidney size", "A patient with microscopic hematuria", "A patient with stable eGFR 50 and A1 albuminuria", "A patient with well-controlled hypertension"],
+    answer: 1,
+    explanation: "Ultrasound KUB is ordered for an indication — hematuria, recurrent UTI, suspected obstruction, rapidly progressive CKD, or suspected ADPKD. Not every patient with CKD needs one."
+  },
+  {
+    stem: "A stable patient with CKD G4 A2. How often should she be seen, and how often should UACR be sent?",
+    options: ["Every 6–12 months; UACR yearly", "Every 3–4 months; UACR every 6 months", "Every month; UACR every visit", "Every 4–6 months; UACR yearly"],
+    answer: 1,
+    explanation: "Stage 4 is reviewed every 3–4 months when stable. UACR goes every 6 months in A2–A3, and every 12 months in A1."
+  },
+  {
+    stem: "You start an ACEI in a patient with CKD G3b. When do you check creatinine and potassium?",
+    options: ["At the next routine visit in 4 months", "Within 2–4 weeks", "Only if the patient becomes symptomatic", "After 6 months"],
+    answer: 1,
+    explanation: "Cr and K are checked within 2–4 weeks of starting or increasing the dose of an ACEI or ARB, whatever the routine visit interval."
+  },
+  {
+    stem: "A non-dialysis patient with CKD G4 has Hb 9.2 g/dl, TSAT 22% and ferritin 240 ng/ml. What comes first?",
+    options: ["Start an erythropoiesis-stimulating agent", "Transfuse", "Start iron — ferrous fumarate or sulfate", "Repeat the CBC in 6 months"],
+    answer: 2,
+    explanation: "In non-dialysis and peritoneal dialysis patients, TSAT < 25% with ferritin < 300 ng/ml means iron deficiency. Correct iron first; ESAs are a nephrology decision once iron is adequate and Hb remains below 10."
+  },
+  {
+    stem: "K is 5.9 mEq/L in a patient on maximum-dose ARB, after dietary advice and a diuretic plus a potassium binder. What is the next step?",
+    options: ["Continue the same treatment and recheck in 3 months", "Stop the ARB, considering a restart later if there is no contraindication", "Halve the diuretic dose", "Start sodium bicarbonate"],
+    answer: 1,
+    explanation: "Third line for persistent hyperkalemia is to stop the ACEI, ARB or MRA — with the option of restarting later if nothing contraindicates it. The goal is K below 5.5 mEq/L."
+  },
+  {
+    stem: "A patient with CKD G4 has P 5.6 mg/dl and Ca 10.4 mg/dl. Which phosphate binder?",
+    options: ["Calcium carbonate three times daily with food", "A non-calcium binder, after consulting a nephrologist", "Calcitriol", "No binder — diet alone"],
+    answer: 1,
+    explanation: "With calcium at or above 10 mg/dl, avoid a calcium-based binder. Consult a nephrologist for lanthanum, sevelamer, sucroferric oxyhydroxide or ferric citrate, and reduce or stop calcium and vitamin D."
+  },
+  {
+    stem: "A 47-year-old on hemodialysis, no diabetes, LDL 128 mg/dl, never on a statin. What do you do?",
+    options: ["Start a high-intensity statin to LDL < 100", "Start a statin to a 30% LDL reduction", "Do not start a statin", "Start ezetimibe alone"],
+    answer: 2,
+    explanation: "In dialysis patients a statin is not started de novo. If the patient was already on one before dialysis it is continued, with the dose adjusted to eGFR."
+  }
+];
+
+class Component extends DCLogic {
+  state = { picked: {} };
+
+  renderVals() {
+    const picked = this.state.picked;
+    const keys = Object.keys(picked);
+    let correct = 0;
+    keys.forEach(k => { if (picked[k] === QUESTIONS[k].answer) correct++; });
+
+    const questions = QUESTIONS.map((q, qi) => {
+      const sel = picked[qi];
+      const answered = sel !== undefined;
+      return {
+        number: "Case " + (qi + 1) + " of " + QUESTIONS.length,
+        stem: q.stem,
+        answered,
+        verdict: answered ? (sel === q.answer ? "Correct" : "Not quite") : "",
+        verdictColor: answered && sel === q.answer ? "var(--color-accent-800)" : "var(--color-neutral-800)",
+        explanation: q.explanation,
+        options: q.options.map((label, oi) => {
+          const isAnswer = oi === q.answer;
+          const isSel = sel === oi;
+          let border = "var(--color-neutral-400)", bg = "#fff", weight = "400";
+          if (answered && isAnswer) { border = "var(--color-accent-700)"; bg = "var(--color-accent-100)"; weight = "500"; }
+          else if (answered && isSel) { border = "var(--color-neutral-500)"; bg = "var(--color-neutral-200)"; }
+          return {
+            label,
+            style: "cursor:pointer;text-align:left;font-family:var(--font-body);font-size:16px;font-weight:" + weight +
+              ";padding:11px 15px;border:1px solid " + border + ";background:" + bg + ";color:var(--color-text)",
+            pick: () => this.setState(s => ({ picked: Object.assign({}, s.picked, { [qi]: oi }) }))
+          };
+        })
+      };
+    });
+
+    return {
+      questions,
+      scoreLabel: correct + " / " + QUESTIONS.length,
+      answeredLabel: keys.length === 0 ? "Nothing answered yet" : keys.length + " of " + QUESTIONS.length + " answered",
+      reset: () => this.setState({ picked: {} })
+    };
+  }
+}
+</script>
+</body>
+</html>

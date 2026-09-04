@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    [data-stack] { grid-template-columns: 1fr !important; }
+    [data-flow] { flex-direction: column !important; }
+    [data-arrow] { transform: rotate(90deg); }
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;letter-spacing:.03em">CKD care map</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-accent-900);background:var(--color-neutral-100);padding:7px 13px;font-weight:500">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1080px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Sheet 05</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">Comorbidities</span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">Treating the comorbid conditions</h1>
+    <p style="font-size:16px;max-width:70ch;color:var(--color-neutral-800);margin:0 0 20px">Hypertension, type 2 diabetes and dyslipidemia in the patient with CKD.</p>
+
+    <nav style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:40px;padding:14px 18px;border:1px solid var(--color-accent-700);background:var(--color-accent-100)">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-800);margin-right:4px">Jump to</span>
+      <a href="#htn" onClick="{{ openHtnForce }}" style="text-decoration:none;font-family:var(--font-heading);font-size:15px;letter-spacing:.03em;color:var(--color-neutral-100);background:var(--color-accent-700);padding:9px 18px">HTN</a>
+      <a href="#dm" onClick="{{ openDmForce }}" style="text-decoration:none;font-family:var(--font-heading);font-size:15px;letter-spacing:.03em;color:var(--color-neutral-100);background:var(--color-accent-700);padding:9px 18px">DM</a>
+      <a href="#dlp" onClick="{{ openDlpForce }}" style="text-decoration:none;font-family:var(--font-heading);font-size:15px;letter-spacing:.03em;color:var(--color-neutral-100);background:var(--color-accent-700);padding:9px 18px">DLP</a>
+      <a href="#sglt2i" onClick="{{ openSglt2iForce }}" style="text-decoration:none;font-family:var(--font-heading);font-size:15px;letter-spacing:.03em;color:var(--color-neutral-100);background:var(--color-accent-700);padding:9px 18px">SGLT2i</a>
+    </nav>
+
+    <section style="border:1px solid var(--color-accent-700);background:#fff;margin-bottom:40px">
+      <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">Goals at a glance</div>
+      <div data-stack style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:18px 20px">
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:4px">Hypertension</div>
+          <div style="font-family:var(--font-heading);font-size:22px">&lt; 130/80 mmHg</div>
+          <div style="font-size:13px;color:var(--color-neutral-700)">Not below 120/70</div>
+        </div>
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:4px">Type 2 diabetes</div>
+          <div style="font-family:var(--font-heading);font-size:22px">HbA1c &lt; 6.5 &ndash; &lt; 8%</div>
+          <div style="font-size:13px;color:var(--color-neutral-700)">Individualised to the patient</div>
+        </div>
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:4px">Dyslipidemia</div>
+          <div style="font-family:var(--font-heading);font-size:22px">LDL &lt; 100 mg/dl</div>
+          <div style="font-size:13px;color:var(--color-neutral-700)">Non-dialysis CKD, primary prevention</div>
+        </div>
+      </div>
+    </section>
+
+    <h2 id="htn" onClick="{{ toggleHtn }}" style="font-size:26px;margin:0 0 16px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none">Hypertension <span style="font-size:16px;color:var(--color-accent-700);font-family:var(--font-heading)">{{ htnChevron }}</span></h2>
+    <sc-if value="{{ openHtn }}" hint-placeholder-val="{{ false }}">
+    <p style="font-size:13px;color:var(--color-neutral-700);margin:0 0 16px">Drug treatment algorithm by CKD stage. Escalate down each column when BP is not at target.</p>
+
+    <div style="margin-bottom:16px">
+      <a href="ACEI-ARB.dc.html" style="display:inline-block;font-family:var(--font-heading);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:8px 13px">ACEI / ARB dosing &amp; titration &rarr;</a>
+    </div>
+
+    <div style="border:1px solid var(--color-neutral-400);background:#fff;padding:22px 24px;margin-bottom:36px;overflow-x:auto">
+    <div style="min-width:760px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 20px;justify-items:center">
+
+      <div style="grid-column:2;border:1px solid var(--color-accent-700);background:var(--color-accent-100);color:var(--color-accent-800);text-align:center;padding:10px 18px;font-family:var(--font-heading);font-size:15px">Initiate ACEI or ARB</div>
+
+      <div style="grid-column:2;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+
+      <div style="grid-column:1 / 4;border:1px solid var(--color-neutral-400);background:var(--color-neutral-200);text-align:center;padding:12px 16px;font-size:15px">Monitor serum creatinine and potassium <span style="color:var(--color-neutral-700)">(within <strong style="color:var(--color-accent-800);font-weight:700">2&ndash;4 weeks</strong> after starting or changing dose)</span></div>
+
+      <div style="grid-column:1;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+      <div style="grid-column:2;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+      <div style="grid-column:3;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+
+      <div style="grid-column:1;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:10px 14px;font-family:var(--font-heading);font-size:15px;width:100%">Normokalemia, &lt; 30% decrease in eGFR</div>
+      <div style="grid-column:2;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:10px 14px;font-family:var(--font-heading);font-size:15px;width:100%">Hyperkalemia</div>
+      <div style="grid-column:3;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:10px 14px;font-family:var(--font-heading);font-size:15px;width:100%">&ge; 30% decrease in eGFR</div>
+
+      <div style="grid-column:1;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+      <div style="grid-column:2;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+      <div style="grid-column:3;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+
+      <div style="grid-column:1;background:var(--color-accent-800);color:var(--color-neutral-100);text-align:center;padding:12px 14px;font-size:14px;width:100%">Increase dose of ACEI/ARB, or continue on the maximally tolerated dose</div>
+      <div style="grid-column:2;border:1px solid var(--color-neutral-400);background:#fff;padding:12px 14px;font-size:13px;width:100%">
+        <ul style="margin:0;padding-left:16px;display:grid;gap:4px">
+          <li>Review concurrent drugs</li>
+          <li>Moderate dietary potassium intake</li>
+          <li>Consider diuretics, sodium bicarbonate, or potassium binders</li>
+        </ul>
+      </div>
+      <div style="grid-column:3;border:1px solid var(--color-neutral-400);background:#fff;padding:12px 14px;font-size:13px;width:100%">
+        <ul style="margin:0;padding-left:16px;display:grid;gap:4px">
+          <li>Review for causes of AKI</li>
+          <li>Correct volume depletion</li>
+          <li>Reassess concomitant medications (diuretics, NSAIDs)</li>
+          <li>Consider renal artery stenosis</li>
+        </ul>
+      </div>
+
+      <div style="grid-column:2;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+      <div style="grid-column:3;color:var(--color-neutral-500);font-size:18px;padding:2px 0">&darr;</div>
+
+      <div style="grid-column:2 / 4;background:var(--color-accent-800);color:var(--color-neutral-100);text-align:center;padding:12px 16px;font-family:var(--font-heading);font-size:15px;width:100%">Reduce dose or stop ACEI/ARB if mitigation strategies are ineffective</div>
+
+    </div>
+    <p style="margin:16px 0 0;font-size:13px;color:var(--color-neutral-700)">After any dose change or mitigation step, re-check Cr and K again within 2&ndash;4 weeks.</p>
+    </div>
+
+    <div style="font-family:var(--font-heading);font-size:22px;font-weight:700;letter-spacing:.02em;color:var(--color-neutral-100);background:var(--color-accent-800);display:inline-block;padding:9px 20px;margin-bottom:18px">Anti-HTN in CKD</div>
+    <div style="overflow-x:auto;margin-bottom:44px">
+    <div style="min-width:760px;display:grid;grid-template-columns:1fr 90px 1fr;gap:0 14px">
+
+      <div style="border:1px solid var(--color-neutral-400);background:var(--color-accent-100);text-align:center;padding:12px 16px">
+        <div style="font-family:var(--font-heading);font-size:17px;color:var(--color-accent-800)">CKD stage 1 to 3</div>
+        <div style="font-size:14px;color:var(--color-neutral-800)">eGFR &ge; 30 ml/min/1.73 m&sup2;</div>
+      </div>
+      <div></div>
+      <div style="border:1px solid var(--color-neutral-400);background:var(--color-accent-100);text-align:center;padding:12px 16px">
+        <div style="font-family:var(--font-heading);font-size:17px;color:var(--color-accent-800)">CKD stage 4 and 5 <span style="font-weight:400">(not on dialysis)</span></div>
+        <div style="font-size:14px;color:var(--color-neutral-800)">eGFR &lt; 30 ml/min/1.73 m&sup2;</div>
+      </div>
+
+      <div style="display:flex;justify-content:center;padding:6px 0;color:var(--color-neutral-500);font-size:18px">&darr;</div>
+      <div></div>
+      <div style="display:flex;justify-content:center;padding:6px 0;color:var(--color-neutral-500);font-size:18px">&darr;</div>
+
+      <div style="border:1px solid var(--color-accent-700);background:#fff;padding:14px 16px;text-align:center">
+        <div style="font-size:16px"><strong>ACEI or ARB</strong> + CCB or thiazide/thiazide-like diuretic</div>
+        <div style="font-size:13px;color:var(--color-neutral-700);margin-top:6px">Increase to full dose if well tolerated</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-family:var(--font-heading);font-size:20px;font-weight:700;color:var(--color-accent-800)">Step 1</div>
+        <div style="font-size:11px;color:var(--color-neutral-700)">Dual combination</div>
+      </div>
+      <div style="border:1px solid var(--color-accent-700);background:#fff;padding:14px 16px;text-align:center">
+        <div style="font-size:16px"><strong>ACEI or ARB</strong> (start low dose) + CCB or loop diuretic</div>
+        <div style="font-size:13px;color:var(--color-neutral-700);margin-top:6px">Increase to full dose if well tolerated</div>
+      </div>
+
+      <div style="display:flex;justify-content:center;padding:6px 0;color:var(--color-neutral-500);font-size:18px">&darr;</div>
+      <div></div>
+      <div style="display:flex;justify-content:center;padding:6px 0;color:var(--color-neutral-500);font-size:18px">&darr;</div>
+
+      <div style="border:1px solid var(--color-accent-700);background:#fff;padding:14px 16px;text-align:center">
+        <div style="font-size:16px"><strong>ACEI or ARB</strong> + CCB + thiazide/thiazide-like diuretic</div>
+        <div style="font-size:13px;color:var(--color-neutral-700);margin-top:6px">Increase to full dose if tolerated</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-family:var(--font-heading);font-size:20px;font-weight:700;color:var(--color-accent-800)">Step 2</div>
+        <div style="font-size:11px;color:var(--color-neutral-700)">Triple combination</div>
+      </div>
+      <div style="border:1px solid var(--color-accent-700);background:#fff;padding:14px 16px;text-align:center">
+        <div style="font-size:16px"><strong>ACEI or ARB</strong> + CCB + loop diuretic</div>
+        <div style="font-size:13px;color:var(--color-neutral-700);margin-top:6px">Increase to full dose if tolerated</div>
+      </div>
+
+      <div style="display:flex;justify-content:center;padding:6px 0;color:var(--color-neutral-500);font-size:18px">&darr;</div>
+      <div></div>
+      <div style="display:flex;justify-content:center;padding:6px 0;color:var(--color-neutral-500);font-size:18px">&darr;</div>
+
+      <div style="border:1px solid var(--color-accent-700);background:var(--color-accent-800);color:var(--color-neutral-100);padding:14px 16px">
+        <div style="font-family:var(--font-heading);font-size:16px;margin-bottom:8px">True resistant hypertension &mdash; add</div>
+        <div style="font-size:15px;display:grid;gap:5px">
+          <div>I) <strong>Spironolactone</strong> (preferred) or other MRA</div>
+          <div>or II) <strong>BB</strong> or <strong>Alpha-1 blocker</strong></div>
+          <div>or III) <strong>Centrally acting agent</strong></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-family:var(--font-heading);font-size:20px;font-weight:700;color:var(--color-accent-800)">Step 3</div>
+        <div style="font-size:11px;color:var(--color-neutral-700)">Add further drugs</div>
+      </div>
+      <div style="border:1px solid var(--color-accent-700);background:var(--color-accent-800);color:var(--color-neutral-100);padding:14px 16px">
+        <div style="font-family:var(--font-heading);font-size:16px;margin-bottom:8px">True resistant hypertension &mdash; add</div>
+        <div style="font-size:15px;display:grid;gap:5px">
+          <div>I) <strong>Chlorthalidone</strong> (preferred) or other thiazide/thiazide-like &rarr; loop diuretic</div>
+          <div>or II) <strong>BB</strong> or <strong>Alpha-1 blocker</strong></div>
+          <div>or III) <strong>Centrally acting agent</strong></div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+    <section style="border:1px solid var(--color-accent-700);background:#fff;margin-bottom:44px">
+      <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">Goal for both steps &mdash; keep the office BP here throughout</div>
+      <div data-stack style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;padding:18px 20px">
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-family:var(--font-heading);font-size:22px;margin-bottom:3px">&lt; 130/80 mmHg</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">Most patients</div>
+        </div>
+        <div style="border-left:3px solid var(--color-accent-700);padding-left:14px">
+          <div style="font-family:var(--font-heading);font-size:22px;margin-bottom:3px">&lt; 140/80 mmHg</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">Aged &ge; 80 years, or symptomatic from low blood pressure</div>
+        </div>
+        <div style="border-left:3px solid #98342f;padding-left:14px">
+          <div style="font-family:var(--font-heading);font-size:22px;margin-bottom:3px;color:#7d2a26">Not below 120/70</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">Do not lower the blood pressure past this</div>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+
+    <h2 id="dm" onClick="{{ toggleDm }}" style="font-size:26px;margin:0 0 16px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none">Type 2 diabetes <span style="font-size:16px;color:var(--color-accent-700);font-family:var(--font-heading)">{{ dmChevron }}</span></h2>
+    <sc-if value="{{ openDm }}" hint-placeholder-val="{{ false }}">
+    <a href="Diabetes-Dose.dc.html" style="display:inline-block;margin-bottom:20px;font-family:var(--font-heading);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:8px 13px">Diabetes drug dosing by eGFR &rarr;</a>
+    <section style="border:1px solid var(--color-neutral-400);background:#fff;padding:22px 24px;margin-bottom:24px;overflow-x:auto">
+      <div style="min-width:600px;display:flex;flex-direction:column;gap:26px">
+
+        <div>
+          <div style="font-family:var(--font-heading);font-size:20px;margin-bottom:8px">Metformin</div>
+          <div style="display:flex;align-items:stretch;height:42px">
+            <div style="flex:3;background:#3f7d3a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;border-right:2px solid #fff">Continue</div>
+            <div style="flex:2;background:#a3332d;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;border-right:2px solid #fff">D/C</div>
+            <div style="flex:3;background:#a3332d;border-right:2px solid #fff"></div>
+            <div style="flex:1;background:#a3332d"></div>
+            <div style="width:0;height:0;border-top:21px solid transparent;border-bottom:21px solid transparent;border-left:14px solid #a3332d"></div>
+          </div>
+          <div style="display:flex;margin-top:6px;font-size:12px;font-weight:600;color:var(--color-neutral-800)">
+            <div style="flex:3;text-align:right;padding-right:6px">30</div>
+            <div style="flex:2;text-align:right;padding-right:6px">20</div>
+            <div style="flex:3;text-align:right;padding-right:6px">Dialysis</div>
+            <div style="flex:1;text-align:right;padding-right:6px">KT</div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family:var(--font-heading);font-size:20px;margin-bottom:8px">SGLT2i</div>
+          <div style="display:flex;align-items:stretch;height:42px">
+            <div style="flex:3;background:#3f7d3a;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;border-right:2px solid #fff">Initiation</div>
+            <div style="flex:2;background:#3f7d3a;border-right:2px solid #fff"></div>
+            <div style="flex:3;background:#2f6fb0;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;border-right:2px solid #fff">Continue*</div>
+            <div style="flex:1;background:#a3332d;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px">D/C</div>
+            <div style="width:0;height:0;border-top:21px solid transparent;border-bottom:21px solid transparent;border-left:14px solid #a3332d"></div>
+          </div>
+          <div style="display:flex;margin-top:6px;font-size:12px;font-weight:600;color:var(--color-neutral-800)">
+            <div style="flex:3;text-align:right;padding-right:6px">30</div>
+            <div style="flex:2;text-align:right;padding-right:6px">20</div>
+            <div style="flex:3;text-align:right;padding-right:6px">Dialysis</div>
+            <div style="flex:1;text-align:right;padding-right:6px">KT</div>
+          </div>
+          <p style="margin:4px 0 0;font-size:12px;color:var(--color-neutral-700)">*Continue but do not initiate if not already started before this point</p>
+
+        <p style="margin:0;font-size:14px;color:var(--color-neutral-800)">Once started, SGLT2i is <strong>continued as eGFR falls further</strong> &mdash; stop only on <strong>dialysis or after kidney transplant</strong>.</p>
+      </div>
+    </section>
+
+    <div data-stack style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;align-items:start;margin-bottom:44px">
+      <section style="border:1px solid var(--color-neutral-400);background:#fff">
+        <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Then</div>
+        <div style="padding:18px 20px">
+          <div style="font-family:var(--font-heading);font-size:22px;margin-bottom:8px">Other agents by eGFR</div>
+          <p style="margin:0 0 10px;font-size:16px">Add or substitute other glucose-lowering drugs with the dose adjusted to eGFR.</p>
+          <p style="margin:0;font-size:16px">Consult a nephrologist where there is an indication for a <strong>GLP-1RA</strong> or <strong>finerenone</strong>.</p>
+          <a href="GLP1-Finerenone.dc.html" style="display:inline-block;margin-top:10px;font-family:var(--font-heading);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:8px 13px">GLP-1RA &amp; finerenone indications &rarr;</a>
+        </div>
+      </section>
+      <section style="border:1px solid var(--color-accent-700);background:#fff">
+        <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">Goal</div>
+        <div style="padding:18px 20px">
+          <div style="font-family:var(--font-heading);font-size:26px;margin-bottom:8px">HbA1c &lt; 6.5 &ndash; &lt; 8%</div>
+          <p style="margin:0;font-size:16px">Individualised to the patient.</p>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+
+    <h2 id="dlp" onClick="{{ toggleDlp }}" style="font-size:26px;margin:0 0 6px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none">Dyslipidemia <span style="font-size:16px;color:var(--color-accent-700);font-family:var(--font-heading)">{{ dlpChevron }}</span></h2>
+    <sc-if value="{{ openDlp }}" hint-placeholder-val="{{ false }}">
+    <a href="Statin-Dose.dc.html" style="display:inline-block;margin-bottom:24px;font-family:var(--font-heading);font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--color-neutral-100);background:var(--color-accent-700);padding:8px 13px">Statin &amp; lipid drug dosing by stage &rarr;</a>
+
+    <div style="margin-bottom:36px;overflow-x:auto;background:#fff;border:1px solid var(--color-neutral-400);padding:16px">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr) 1.1fr;gap:0 8px;min-width:760px">
+
+      <div style="grid-column:1 / 5;grid-row:1;border:1px solid var(--color-accent-700);background:var(--color-accent-100);text-align:center;padding:12px;font-family:var(--font-heading);font-size:17px;color:var(--color-accent-800)">Primary prevention</div>
+      <div style="grid-column:5;grid-row:1;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:12px;font-family:var(--font-heading);font-size:17px">Secondary prevention</div>
+
+      <div style="grid-column:1 / 3;grid-row:2;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+      <div style="grid-column:3;grid-row:2;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+      <div style="grid-column:4;grid-row:2;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+
+      <div style="grid-column:1 / 3;grid-row:3;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:12px;font-family:var(--font-heading);font-size:16px">CKD <span style="font-weight:400">(non-dialysis)</span></div>
+      <div style="grid-column:3;grid-row:3;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:12px;font-family:var(--font-heading);font-size:16px">Dialysis</div>
+      <div style="grid-column:4;grid-row:3;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:12px;font-family:var(--font-heading);font-size:16px">KT</div>
+      <div style="grid-column:5;grid-row:2 / 4;display:flex;align-items:center;font-size:15px;padding:12px 16px">Follow each guideline (MI, stroke)</div>
+
+      <div style="grid-column:1;grid-row:4;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+      <div style="grid-column:2;grid-row:4;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+      <div style="grid-column:3;grid-row:4;text-align:center;padding:8px 12px;font-size:13px;color:var(--color-neutral-700)">Not started for primary prevention</div>
+      <div style="grid-column:4;grid-row:4;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+
+      <div style="grid-column:1;grid-row:5;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:10px;font-family:var(--font-heading);font-size:15px">Age &ge; 50</div>
+      <div style="grid-column:2;grid-row:5;border:1px solid var(--color-neutral-400);background:#fff;text-align:center;padding:10px;font-family:var(--font-heading);font-size:15px">18&ndash;49</div>
+      <div style="grid-column:3;grid-row:5"></div>
+      <div style="grid-column:4;grid-row:5;border:1px solid var(--color-accent-700);background:var(--color-accent-100);text-align:center;padding:10px;font-family:var(--font-heading);font-size:15px;color:var(--color-accent-800)">Statin</div>
+
+      <div style="grid-column:1;grid-row:6;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+      <div style="grid-column:2;grid-row:6;display:flex;justify-content:center;align-items:center;padding:4px 0"><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500)"></div></div>
+
+      <div style="grid-column:1;grid-row:7;border:1px solid var(--color-accent-700);background:var(--color-accent-100);text-align:center;padding:10px;font-family:var(--font-heading);font-size:15px;color:var(--color-accent-800)">Statin, or statin + ezetimibe</div>
+      <div style="grid-column:2;grid-row:7;border:1px solid var(--color-accent-700);background:var(--color-accent-100);text-align:center;padding:10px;font-family:var(--font-heading);font-size:15px;color:var(--color-accent-800)">Statin if any of&hellip; &rarr;</div>
+      <div style="grid-column:3 / 5;grid-row:7;border:1px dashed var(--color-neutral-400);padding:10px 14px;font-size:13px;color:var(--color-neutral-800)">
+        <ol style="margin:0;padding-left:18px;display:grid;gap:3px">
+          <li>Diabetes</li>
+          <li>10-year CV risk &gt; 10%</li>
+          <li>Ischemic stroke</li>
+          <li>Myocardial infarction</li>
+        </ol>
+      </div>
+
+    </div>
+    </div>
+
+    <p style="font-size:15px;color:var(--color-neutral-700);margin:0 0 16px">Detail cards by dialysis status &mdash; choose the patient in front of you.</p>
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:20px">
+      <sc-for list="{{ lipidTabs }}" as="t" hint-placeholder-count="3">
+        <button type="button" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+    <div data-stack style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;align-items:start;margin-bottom:44px;max-width:840px">
+      <section style="border:1px solid var(--color-neutral-400);background:#fff">
+        <div style="padding:9px 18px;border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase;background:{{ lipidKickerBg }};color:{{ lipidKickerColor }}">{{ lipidKickerPre }}<strong>{{ lipidKickerStrong }}</strong>{{ lipidKickerPost }}</div>
+        <div style="padding:18px 20px">
+          <div style="font-family:var(--font-heading);font-size:22px;margin-bottom:10px">{{ lipidTitle }}</div>
+          <sc-for list="{{ lipidLines }}" as="line" hint-placeholder-count="3">
+            <div style="font-size:16px;display:flex;gap:9px;margin-bottom:6px"><span style="color:var(--color-accent-600)">&mdash;</span><span>{{ line.text }}<sc-if value="{{ line.href }}" hint-placeholder-val="{{ false }}"> (<a href="{{ line.href }}" target="_blank" rel="noopener">calculate &rarr;</a>)</sc-if></span></div>
+          </sc-for>
+        </div>
+      </section>
+      <section style="border:1px solid var(--color-accent-700);background:#fff">
+        <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">LDL target</div>
+        <div style="padding:18px 20px">
+          <div style="font-family:var(--font-heading);font-size:26px;margin-bottom:8px">{{ lipidTarget }}</div>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">{{ lipidTargetNote }}</p>
+        </div>
+      </section>
+    </div>
+
+    </sc-if>
+
+    <h2 id="sglt2i" onClick="{{ toggleSglt2i }}" style="font-size:26px;margin:0 0 6px;cursor:pointer;display:flex;align-items:center;gap:10px;user-select:none">SGLT2i <span style="font-size:16px;color:var(--color-accent-700);font-family:var(--font-heading)">{{ sglt2iChevron }}</span></h2>
+    <sc-if value="{{ openSglt2i }}" hint-placeholder-val="{{ false }}">
+    <p style="font-size:13px;color:var(--color-neutral-700);margin:0 0 20px">KDIGO 2024 &mdash; who should receive an SGLT2 inhibitor.</p>
+
+    <div style="border:1px solid var(--color-neutral-400);background:#fff;padding:24px 22px;margin-bottom:44px;overflow-x:auto">
+      <div style="display:flex;gap:14px;align-items:stretch;margin-bottom:8px;min-width:760px">
+        <div style="flex:2 1 0;background:var(--color-accent-900);color:var(--color-neutral-100);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px 20px;gap:4px">
+          <div style="font-family:var(--font-heading);font-size:19px;font-weight:600">Who should receive SGLT2i?</div>
+          <div style="font-size:15px;opacity:.9">eGFR &ge; 20</div>
+        </div>
+        <div style="flex:1 1 0;border:1px solid var(--color-neutral-400);padding:12px 16px;font-size:13px;line-height:1.5">
+          <strong>Not used in:</strong> ADPKD, ANCA vasculitis, type 1 diabetes, or immunosuppressive therapy within the last 3 months.
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px 20px;min-width:760px">
+        <div style="grid-column:1;grid-row:1;background:var(--color-accent-700);color:var(--color-neutral-100);text-align:center;padding:12px 10px;font-family:var(--font-heading);font-size:16px">Patients with DM</div>
+        <div style="grid-column:2;grid-row:1;background:#3f7d3a;color:var(--color-neutral-100);text-align:center;padding:12px 10px;font-family:var(--font-heading);font-size:16px">Patients with CKD</div>
+        <div style="grid-column:3;grid-row:1;background:var(--color-accent-700);color:var(--color-neutral-100);text-align:center;padding:12px 10px;font-family:var(--font-heading);font-size:16px">Patients with HF</div>
+
+        <div style="grid-column:1;grid-row:2;display:flex;flex-direction:column;align-items:center;justify-content:stretch;padding:4px 0">
+          <div style="flex:1;width:2px;background:var(--color-neutral-500);min-height:20px"></div>
+          <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500);margin-top:-1px"></div>
+        </div>
+        <div style="grid-column:2;grid-row:2;display:flex;flex-direction:column;align-items:center;justify-content:stretch;padding:4px 0">
+          <div style="flex:1;width:2px;background:var(--color-neutral-500);min-height:20px"></div>
+          <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500);margin-top:-1px"></div>
+        </div>
+        <div style="grid-column:3;grid-row:2 / 5;display:flex;flex-direction:column;align-items:center;justify-content:stretch;padding:4px 0">
+          <div style="flex:1;width:2px;background:var(--color-neutral-500);min-height:24px"></div>
+          <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500);margin-top:-1px"></div>
+        </div>
+
+        <div style="grid-column:1;grid-row:3;display:flex;gap:8px">
+          <div style="flex:1;background:var(--color-accent-100);color:var(--color-accent-800);text-align:center;padding:10px 6px;font-family:var(--font-heading);font-size:15px">DKD</div>
+          <div style="flex:1;background:var(--color-accent-100);color:var(--color-accent-800);text-align:center;padding:10px 6px;font-family:var(--font-heading);font-size:15px">ASCVD</div>
+        </div>
+        <div style="grid-column:2;grid-row:3;display:flex;gap:8px">
+          <div style="flex:1;background:color-mix(in srgb, #3f7d3a 10%, white);color:#2f5c2b;text-align:center;padding:10px 6px;font-family:var(--font-heading);font-size:15px">UACR &ge; 200 mg/g</div>
+          <div style="flex:1;background:color-mix(in srgb, #3f7d3a 10%, white);color:#2f5c2b;text-align:center;padding:10px 6px;font-family:var(--font-heading);font-size:15px">UACR &lt; 200 mg/g</div>
+        </div>
+
+        <div style="grid-column:1;grid-row:4;display:flex;flex-direction:column;align-items:center;justify-content:stretch;padding:4px 0">
+          <div style="flex:1;width:2px;background:var(--color-neutral-500);min-height:20px"></div>
+          <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500);margin-top:-1px"></div>
+        </div>
+        <div style="grid-column:2;grid-row:4;display:flex;gap:8px;align-items:stretch">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:stretch;padding:4px 0">
+            <div style="flex:1;width:2px;background:var(--color-neutral-500);min-height:20px"></div>
+            <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500);margin-top:-1px"></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;color:var(--color-neutral-700)">
+            <div style="width:2px;flex:1;background:var(--color-neutral-500);min-height:14px"></div>
+            <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--color-neutral-500);margin-top:-1px"></div>
+            <div style="margin-top:2px">eGFR 20&ndash;45</div>
+          </div>
+        </div>
+        <div style="grid-column:3;grid-row:4"></div>
+
+        <div style="grid-column:1;grid-row:5;background:color-mix(in srgb, #3f7d3a 10%, white);text-align:center;padding:12px 8px;font-size:15px">Use SGLT2i <strong style="color:#2f5c2b">(1A)</strong></div>
+        <div style="grid-column:2;grid-row:5;display:flex;gap:8px">
+          <div style="flex:1;background:color-mix(in srgb, #3f7d3a 10%, white);text-align:center;padding:12px 6px;font-size:14px">SGLT2i <strong style="color:#2f5c2b">(1A)</strong><br>recommended</div>
+          <div style="flex:1;background:color-mix(in srgb, #3f7d3a 10%, white);text-align:center;padding:12px 6px;font-size:14px">SGLT2i <strong style="color:#2f5c2b">(2B)</strong><br>suggested</div>
+        </div>
+        <div style="grid-column:3;grid-row:5;background:color-mix(in srgb, #3f7d3a 10%, white);text-align:center;padding:12px 8px;font-size:15px">Use SGLT2i <strong style="color:#2f5c2b">(1A)</strong></div>
+      </div>
+    </div>
+
+    </sc-if>
+
+    <p style="margin:32px 0 0;font-size:13px;color:var(--color-neutral-700)">Adapted from Thai CKD in Adult (NST) 2022, KDIGO CKD 2024 and Dyslipidemia (RCPT) 2024. SGLT2i for Thai CKD (NST), announced on CKD weekend, 18 November 2023.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700)">
+    For medical education. Clinical decisions remain the responsibility of the treating physician.
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LIPID = {
+  nondialysis: {
+    label: "Non-dialysis",
+    kicker: "Start a statin if any one holds",
+    kickerParts: ["Start a statin if ", "any one", " holds"],
+    title: "Statin, dose adjusted to eGFR",
+    lines: [{text:"Age > 50 years, or"}, {text:"Diabetes, or"}, {text:"10-year cardiovascular risk > 10%"}],
+    target: "< 100 mg/dl",
+    targetNote: "Or a 30% reduction from baseline LDL (RCPT 2024). Applies to CKD only."
+  },
+  dialysis: {
+    label: "Dialysis",
+    kicker: "Do not start",
+    title: "No new statin",
+    lines: [{text:"Do not start a statin de novo"}, {text:"Continue it if the patient was already taking one, with the dose adjusted to eGFR"}],
+    target: "No new target",
+    targetNote: "Continue existing therapy rather than treating to an LDL goal."
+  },
+  kt: {
+    label: "Kidney transplant",
+    kicker: "Treat",
+    title: "Statin, dose adjusted to eGFR",
+    lines: [{text:"Statin therapy is given after transplantation"}, {text:"Watch for interactions with immunosuppressants"}],
+    target: "Not applicable",
+    targetNote: "No LDL target is set after kidney transplantation."
+  }
+};
+
+class Component extends DCLogic {
+  state = { lipid: "nondialysis", open: { htn: false, dm: false, dlp: false, sglt2i: false } };
+
+  toggle(k) { return () => this.setState(s => ({ open: { ...s.open, [k]: !s.open[k] } })); }
+  forceOpen(k) { return () => this.setState(s => ({ open: { ...s.open, [k]: true } })); }
+
+  renderVals() {
+    const cur = LIPID[this.state.lipid];
+    const open = this.state.open;
+    const chevron = (k) => open[k] ? "\u2212" : "+";
+    const chip = (active) =>
+      "cursor:pointer;font-family:var(--font-heading);font-size:15px;padding:8px 14px;border:1px solid " +
+      (active ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (active ? "var(--color-accent-700)" : "#fff") + ";color:" + (active ? "var(--color-neutral-100)" : "var(--color-text)");
+
+    return {
+      lipidTabs: Object.keys(LIPID).map(k => ({
+        label: LIPID[k].label, style: chip(this.state.lipid === k),
+        pick: () => this.setState({ lipid: k })
+      })),
+      lipidKickerPre: cur.kickerParts ? cur.kickerParts[0] : cur.kicker,
+      lipidKickerStrong: cur.kickerParts ? cur.kickerParts[1] : "",
+      lipidKickerPost: cur.kickerParts ? cur.kickerParts[2] : "",
+      lipidKickerBg: this.state.lipid === "dialysis" ? "#f3d8d5" : "var(--color-accent-100)",
+      lipidKickerColor: this.state.lipid === "dialysis" ? "#7d2a26" : "var(--color-accent-800)",
+      lipidTitle: cur.title,
+      lipidLines: cur.lines,
+      lipidTarget: cur.target,
+      lipidTargetNote: cur.targetNote,
+      openHtn: open.htn, openDm: open.dm, openDlp: open.dlp, openSglt2i: open.sglt2i,
+      toggleHtn: this.toggle("htn"), toggleDm: this.toggle("dm"), toggleDlp: this.toggle("dlp"), toggleSglt2i: this.toggle("sglt2i"),
+      openHtnForce: this.forceOpen("htn"), openDmForce: this.forceOpen("dm"), openDlpForce: this.forceOpen("dlp"), openSglt2iForce: this.forceOpen("sglt2i"),
+      htnChevron: chevron("htn"), dmChevron: chevron("dm"), dlpChevron: chevron("dlp"), sglt2iChevron: chevron("sglt2i")
+    };
+  }
+}
+</script>
+</body>
+</html>

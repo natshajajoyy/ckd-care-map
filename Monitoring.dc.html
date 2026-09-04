@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    [data-stack] { grid-template-columns: 1fr !important; }
+    [data-row3] { grid-template-columns: auto 1fr auto !important; }
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:21px;letter-spacing:.03em">CKD care map</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-accent-900);background:var(--color-neutral-100);padding:7px 13px;font-weight:500">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:1080px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Sheet 02</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">Monitoring</span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">Follow-up and laboratory schedule</h1>
+    <p style="font-size:16px;max-width:70ch;color:var(--color-neutral-800);margin:0 0 40px">Set the patient's stage and comorbidities to get the visit interval and the labs due. Intervals assume a stable patient; bring the visit forward for any acute change.</p>
+
+    <section data-stack style="display:grid;grid-template-columns:minmax(250px,300px) minmax(0,1fr);gap:28px;align-items:start;margin-bottom:44px">
+
+      <div style="border:1px solid var(--color-neutral-400);background:#fff">
+        <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">This patient</div>
+        <div style="padding:18px 20px;display:flex;flex-direction:column;gap:20px">
+          <div>
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">GFR category</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px">
+              <sc-for list="{{ stages }}" as="s" hint-placeholder-count="6">
+                <button type="button" onClick="{{ s.pick }}" style="{{ s.style }}">{{ s.id }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Albuminuria</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px">
+              <sc-for list="{{ albs }}" as="a" hint-placeholder-count="3">
+                <button type="button" onClick="{{ a.pick }}" style="{{ a.style }}">{{ a.id }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:8px">Also present</div>
+            <div style="display:grid;gap:5px">
+              <sc-for list="{{ flags }}" as="f" hint-placeholder-count="4">
+                <button type="button" onClick="{{ f.pick }}" style="{{ f.style }}">{{ f.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div style="border:1px solid var(--color-accent-700);background:#fff">
+          <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">Clinic visit &mdash; if stable</div>
+          <div style="padding:18px 20px">
+            <div style="font-family:var(--font-heading);font-size:36px;line-height:1.05">{{ visitInterval }}</div>
+            <div style="font-size:15px;color:var(--color-neutral-800);margin-top:6px">{{ visitNote }}</div>
+          </div>
+        </div>
+
+        <div style="border:1px solid var(--color-neutral-400);background:#fff">
+          <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Labs due &mdash; {{ selectionLabel }}</div>
+          <div>
+            <sc-for list="{{ labs }}" as="row" hint-placeholder-count="6">
+              <div data-stack style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;padding:13px 20px;border-bottom:1px solid var(--color-neutral-300);align-items:baseline">
+                <div>
+                  <div style="font-size:16px;font-weight:500">{{ row.name }}</div>
+                  <div style="font-size:13px;color:var(--color-neutral-700);margin-top:2px">{{ row.detail }}</div>
+                </div>
+                <div style="font-family:var(--font-heading);font-size:20px;color:var(--color-accent-800);text-align:right">{{ row.interval }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ acePrompt }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:12px 20px;background:var(--color-accent-100);font-size:15px;font-weight:500;color:var(--color-accent-800)">Check Cr and K within 2&ndash;4 weeks after starting or increasing the dose of an ACEI or ARB.</div>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <section style="border:1px solid var(--color-neutral-400);background:#fff">
+      <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Full reference table &mdash; as printed on the care map</div>
+      <div style="overflow-x:auto;padding:6px 20px 16px">
+        <table class="table" style="min-width:600px">
+          <thead>
+            <tr>
+              <th style="width:46%">Laboratory</th>
+              <th>G3a &ndash; G3b</th>
+              <th>G4 &ndash; G5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:500">Creatinine, eGFR &amp; electrolytes</td><td colspan="2">Every visit &mdash; plus Cr, K within 2&ndash;4 weeks after starting or increasing ACEI/ARB</td></tr>
+            <tr><td style="font-weight:500">Urinalysis &amp; UACR or UPCR</td><td colspan="2">Every 6 months (A2&ndash;A3) &middot; every 12 months (A1)</td></tr>
+            <tr><td colspan="3" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100)">Anemia</td></tr>
+            <tr><td style="padding-left:24px">Without anemia: CBC <span class="text-muted">(no iron profile)</span></td><td>Every 12 months</td><td>Every 6 months</td></tr>
+            <tr><td style="padding-left:24px">With anemia: CBC + TSAT, ferritin</td><td colspan="2">Every 3&ndash;6 months</td></tr>
+            <tr><td colspan="3" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100)">CKD &ndash; mineral and bone disorder</td></tr>
+            <tr><td style="padding-left:24px">Ca, P</td><td>Every 6&ndash;12 months</td><td>Every 3&ndash;6 months</td></tr>
+            <tr><td style="padding-left:24px">Parathyroid hormone <span class="text-muted">(start at G3b)</span></td><td>Every 12 months</td><td>Every 3&ndash;12 months</td></tr>
+            <tr><td colspan="3" style="font-family:var(--font-heading);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100)">Comorbidities</td></tr>
+            <tr><td style="padding-left:24px">HbA1c, FBS <span class="text-muted">(follow-up in DM)</span></td><td colspan="2">Every 3&ndash;6 months</td></tr>
+            <tr><td style="padding-left:24px">Lipid profile <span class="text-muted">(total cholesterol, LDL, HDL, TG)</span></td><td colspan="2">Every 6&ndash;12 months &mdash; follow LDL and non-HDL in dyslipidemia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p style="margin:32px 0 0;font-size:13px;color:var(--color-neutral-700)">Adapted from Thai CKD in Adult (NST) 2022 and KDIGO CKD 2024.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700)">
+    For medical education. Clinical decisions remain the responsibility of the treating physician.
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { stage: "G3b", alb: "A2", anemia: false, dm: false, lipid: false, onAcei: true };
+
+  chip(active) {
+    return "cursor:pointer;font-family:var(--font-heading);font-size:15px;padding:8px 4px;border:1px solid " +
+      (active ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (active ? "var(--color-accent-700)" : "#fff") + ";color:" +
+      (active ? "var(--color-neutral-100)" : "var(--color-text)") + ";text-align:center";
+  }
+  chipWide(active) { return this.chip(active) + ";padding:9px 12px;text-align:left;font-size:14px"; }
+
+  renderVals() {
+    const st = this.state;
+    const advanced = ["G3a", "G3b", "G4", "G5"].indexOf(st.stage) >= 0;
+    const late = st.stage === "G4" || st.stage === "G5";
+
+    const visitMap = {
+      G1: ["Every 6 – 12 months", "Stage 1 – 2: annual review is acceptable when eGFR and albuminuria are stable."],
+      G2: ["Every 6 – 12 months", "Stage 1 – 2: annual review is acceptable when eGFR and albuminuria are stable."],
+      G3a: ["Every 4 – 6 months", "Stage 3: watch the rate of eGFR decline between visits."],
+      G3b: ["Every 4 – 6 months", "Stage 3: start sending PTH from G3b onwards."],
+      G4: ["Every 3 – 4 months", "Stage 4: refer to Nephrology OPD 9 and begin modality education."],
+      G5: ["Every 1 – 3 months", "Stage 5: interval depends on the patient's symptoms. Refer to Nephrology OPD 26."]
+    };
+
+    const labs = [
+      { name: "Creatinine, eGFR & electrolytes", detail: "Cr, K, Na, HCO₃", interval: "Every visit" },
+      { name: "Urinalysis & UACR or UPCR", detail: "Category " + st.alb, interval: st.alb === "A1" ? "12 months" : "6 months" }
+    ];
+
+    if (st.anemia) {
+      labs.push({ name: "CBC + TSAT, ferritin", detail: "Anemia present — full iron profile", interval: "3 – 6 months" });
+    } else {
+      labs.push({ name: "CBC", detail: "No anemia — iron profile not needed", interval: late ? "6 months" : "12 months" });
+    }
+
+    if (advanced) {
+      labs.push({ name: "Calcium, phosphate", detail: "CKD – mineral and bone disorder", interval: late ? "3 – 6 months" : "6 – 12 months" });
+      if (st.stage !== "G3a") {
+        labs.push({ name: "Parathyroid hormone", detail: "Sent from G3b onwards", interval: late ? "3 – 12 months" : "12 months" });
+      }
+    }
+    if (st.dm) labs.push({ name: "HbA1c, FBS", detail: "Diabetes follow-up", interval: "3 – 6 months" });
+    labs.push({ name: "Lipid profile", detail: st.lipid ? "Follow LDL and non-HDL" : "Total cholesterol, LDL, HDL, TG", interval: "6 – 12 months" });
+
+    const stages = ["G1", "G2", "G3a", "G3b", "G4", "G5"].map(id => ({
+      id, style: this.chip(st.stage === id), pick: () => this.setState({ stage: id })
+    }));
+    const albs = ["A1", "A2", "A3"].map(id => ({
+      id, style: this.chip(st.alb === id), pick: () => this.setState({ alb: id })
+    }));
+    const flags = [
+      { key: "anemia", label: "Anemia (Hb < 10 g/dl)" },
+      { key: "dm", label: "Type 2 diabetes" },
+      { key: "lipid", label: "Dyslipidemia on statin" },
+      { key: "onAcei", label: "On ACEI or ARB" }
+    ].map(f => ({
+      label: f.label, style: this.chipWide(!!st[f.key]),
+      pick: () => this.setState(s => ({ [f.key]: !s[f.key] }))
+    }));
+
+    return {
+      stages, albs, flags, labs,
+      visitInterval: visitMap[st.stage][0],
+      visitNote: visitMap[st.stage][1],
+      selectionLabel: "CKD " + st.stage + " " + st.alb,
+      acePrompt: st.onAcei
+    };
+  }
+}
+</script>
+</body>
+</html>

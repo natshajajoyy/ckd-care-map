@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/styles.css">
+<script src="_ds/industry-ed87415f-b89d-48a9-980e-ddfebd4e8e37/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+  @media (max-width: 760px) {
+    h1 { font-size: 32px !important; }
+    h2 { font-size: 22px !important; }
+    nav a { padding: 11px 14px !important; font-size: 14px !important; }
+    main, header { padding-left: 18px !important; padding-right: 18px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--color-neutral-100);color:var(--color-text)">
+
+  <header style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:18px 40px;background:var(--color-accent-800);color:var(--color-neutral-100)">
+    <div style="margin-right:auto">
+      <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75">Outpatient department</div>
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:28px;letter-spacing:.03em">CKD care map</div>
+      <div style="font-size:11px;opacity:.7;margin-top:2px">Courtesy Aj. Karn Pongsuwan</div>
+    </div>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;font-size:13px">
+      <a href="Flow.dc.html" style="text-decoration:none;color:var(--color-accent-900);background:var(--color-neutral-100);padding:7px 13px;font-weight:500">Flow</a>
+      <a href="Home.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Diagnosis</a>
+      <a href="Monitoring.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Monitoring</a>
+      <a href="Recommendations.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Advice</a>
+      <a href="Nutrition.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Nutrition</a>
+      <a href="Complications.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Complications</a>
+      <a href="Comorbidities.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Comorbidities</a>
+      <a href="Drug-Dosing.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Drug dosing</a>
+      <a href="Quiz.dc.html" style="text-decoration:none;color:var(--color-neutral-100);padding:7px 13px;border:1px solid color-mix(in srgb, #f5f5f8 35%, transparent)">Self-check</a>
+    </nav>
+  </header>
+
+  <main style="max-width:760px;margin:0 auto;padding:44px 40px 96px">
+
+    <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px">
+      <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--color-accent-700);color:var(--color-neutral-100);padding:4px 10px">Overview</span>
+      <span style="font-size:13px;color:var(--color-neutral-700)">OPD visit flow</span>
+    </div>
+    <h1 style="font-size:40px;line-height:1.06;margin:0 0 10px">The CKD visit, at a glance</h1>
+    <p style="font-size:16px;max-width:60ch;color:var(--color-neutral-800);margin:0 0 6px">An overview of the CKD care process during an OPD visit.</p>
+    <p style="font-size:15px;max-width:60ch;color:var(--color-neutral-700);margin:0 0 40px">Click any step to jump straight to its detail sheet.</p>
+
+    <div style="display:flex;flex-direction:column">
+
+      <a href="Home.dc.html" style="display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-neutral-400);background:#fff;padding:18px 20px" style-hover="border-color:var(--color-accent-700)">
+        <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">1</div>
+        <div>
+          <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px">Diagnose &amp; stage</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">Confirm CKD (&gt; 3 months), read eGFR + UACR &rarr; GFR &amp; albuminuria category. Flag G4&ndash;G5 for nephrology referral.</div>
+        </div>
+      </a>
+      <div style="flex:none;width:38px;display:flex;justify-content:center;font-size:20px;color:var(--color-accent-700);line-height:1;padding:4px 0">&darr;</div>
+
+      <a href="Monitoring.dc.html" style="display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-neutral-400);background:#fff;padding:18px 20px" style-hover="border-color:var(--color-accent-700)">
+        <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">2</div>
+        <div>
+          <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px">Check monitoring &amp; labs due</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">Look up the visit interval and which labs are due for this stage.</div>
+        </div>
+      </a>
+      <div style="flex:none;width:38px;display:flex;justify-content:center;font-size:20px;color:var(--color-accent-700);line-height:1;padding:4px 0">&darr;</div>
+
+      <a href="Comorbidities.dc.html" style="display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-neutral-400);background:#fff;padding:18px 20px" style-hover="border-color:var(--color-accent-700)">
+        <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">3</div>
+        <div style="flex:1">
+          <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px">Treat the comorbidities</div>
+          <div style="font-size:15px;color:var(--color-neutral-800);margin-bottom:10px">Hypertension, type 2 diabetes, dyslipidemia.</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span style="font-size:12px;font-family:var(--font-heading);letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100);padding:4px 9px">HTN</span>
+            <span style="font-size:12px;font-family:var(--font-heading);letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100);padding:4px 9px">DM</span>
+            <span style="font-size:12px;font-family:var(--font-heading);letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100);padding:4px 9px">DLP</span>
+            <span style="font-size:12px;font-family:var(--font-heading);letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-800);background:var(--color-accent-100);padding:4px 9px">SGLT2i</span>
+          </div>
+        </div>
+      </a>
+      <div style="flex:none;width:38px;display:flex;justify-content:center;font-size:20px;color:var(--color-accent-700);line-height:1;padding:4px 0">&darr;</div>
+
+      <a href="Complications.dc.html" style="display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-neutral-400);background:#fff;padding:18px 20px" style-hover="border-color:var(--color-accent-700)">
+        <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">4</div>
+        <div>
+          <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px">Manage complications</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">Anemia, hyperkalemia, CKD-MBD, metabolic acidosis.</div>
+        </div>
+      </a>
+      <div style="flex:none;width:38px;display:flex;justify-content:center;font-size:20px;color:var(--color-accent-700);line-height:1;padding:4px 0">&darr;</div>
+
+      <div style="display:flex;gap:12px">
+        <a href="Recommendations.dc.html" style="flex:1;display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-neutral-400);background:#fff;padding:18px 20px" style-hover="border-color:var(--color-accent-700)">
+          <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">5</div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px">Give advice</div>
+            <div style="font-size:15px;color:var(--color-neutral-800)">Lifestyle, drug safety, vaccination.</div>
+          </div>
+        </a>
+        <a href="Nutrition.dc.html" style="flex:1;display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-neutral-400);background:#fff;padding:18px 20px" style-hover="border-color:var(--color-accent-700)">
+          <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">6</div>
+          <div>
+            <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px">Nutrition</div>
+            <div style="font-size:15px;color:var(--color-neutral-800)">Diet, potassium &amp; phosphorus.</div>
+          </div>
+        </a>
+      </div>
+      <div style="flex:none;width:38px;display:flex;justify-content:center;font-size:20px;color:var(--color-accent-700);line-height:1;padding:4px 0">&darr;</div>
+
+      <a href="Home.dc.html#referral" style="display:flex;gap:18px;text-decoration:none;color:inherit;border:1px solid var(--color-accent-700);background:var(--color-accent-100);padding:18px 20px">
+        <div style="flex:none;width:38px;height:38px;border-radius:50%;background:var(--color-accent-700);color:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">7</div>
+        <div>
+          <div style="font-family:var(--font-heading);font-size:19px;margin-bottom:4px;color:var(--color-accent-800)">Refer if G4&ndash;G5</div>
+          <div style="font-size:15px;color:var(--color-neutral-800)">CKD G4 &rarr; Nephrology OPD 9. CKD G5 &rarr; Nephrology OPD 26.</div>
+        </div>
+      </a>
+
+    </div>
+
+    <h2 style="font-size:26px;margin:48px 0 6px">eGFR calculator</h2>
+    <p style="font-size:15px;max-width:60ch;color:var(--color-neutral-700);margin:0 0 20px">CKD-EPI 2021 (race-free). Enter age, sex and serum creatinine for eGFR, stage and dose flags.</p>
+
+    <div style="border:1px solid var(--color-neutral-400);background:#fff;margin-bottom:16px">
+      <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Inputs</div>
+      <div style="padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+        <label style="display:grid;gap:5px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Age (years)</span>
+          <input type="number" min="18" max="120" value="{{ age }}" onChange="{{ onAge }}" placeholder="e.g. 65" style="font-size:18px;padding:10px 12px;border:1px solid var(--color-neutral-400);background:#fff">
+        </label>
+        <div>
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);display:block;margin-bottom:6px">Sex</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+            <button type="button" onClick="{{ pickMale }}" style="{{ maleStyle }}">Male</button>
+            <button type="button" onClick="{{ pickFemale }}" style="{{ femaleStyle }}">Female</button>
+          </div>
+        </div>
+        <label style="display:grid;gap:5px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">Creatinine (mg/dL)</span>
+          <input type="number" min="0.1" step="0.01" value="{{ scr }}" onChange="{{ onScr }}" placeholder="e.g. 1.2" style="font-size:18px;padding:10px 12px;border:1px solid var(--color-neutral-400);background:#fff">
+        </label>
+        <label style="display:grid;gap:5px">
+          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700)">UACR, mg/g (optional)</span>
+          <input type="number" min="0" step="1" value="{{ uacr }}" onChange="{{ onUacr }}" placeholder="e.g. 45" style="font-size:18px;padding:10px 12px;border:1px solid var(--color-neutral-400);background:#fff">
+        </label>
+      </div>
+    </div>
+
+    <sc-if value="{{ hasResult }}" hint-placeholder-val="{{ false }}">
+      <div style="border:1px solid var(--color-accent-700);background:#fff;margin-bottom:16px">
+        <div style="padding:9px 18px;background:var(--color-accent-700);color:var(--color-neutral-100);font-family:var(--font-heading);font-size:14px;letter-spacing:.12em;text-transform:uppercase">Result</div>
+        <div style="padding:20px 22px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+          <div>
+            <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:2px">eGFR</div>
+            <div style="font-family:var(--font-heading);font-size:44px;line-height:1">{{ egfrText }}</div>
+            <div style="font-size:13px;color:var(--color-neutral-700)">ml/min/1.73m&sup2;</div>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <div style="{{ gBadgeStyle }}">
+              <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.85">GFR category</div>
+              <div style="font-family:var(--font-heading);font-size:22px">{{ gLabel }}</div>
+              <div style="font-size:12px">{{ gDesc }}</div>
+            </div>
+            <sc-if value="{{ hasUacr }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ aBadgeStyle }}">
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.85">Albuminuria</div>
+                <div style="font-family:var(--font-heading);font-size:22px">{{ aLabel }}</div>
+                <div style="font-size:12px">{{ aDesc }}</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        <sc-if value="{{ hasReferral }}" hint-placeholder-val="{{ false }}">
+          <div style="margin:0 22px 20px;padding:12px 16px;background:var(--color-accent-100);font-size:15px;font-weight:500;color:var(--color-accent-800)">{{ referralText }}</div>
+        </sc-if>
+      </div>
+
+      <div style="border:1px solid var(--color-neutral-400);background:#fff;margin-bottom:16px">
+        <div style="padding:9px 18px;background:var(--color-accent-100);border-bottom:1px solid var(--color-neutral-400);font-family:var(--font-heading);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-800)">Dose flags at this eGFR</div>
+        <div style="display:grid;gap:0">
+          <sc-for list="{{ doseFlags }}" as="d" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;padding:13px 20px;border-bottom:1px solid var(--color-neutral-300);align-items:baseline">
+              <div>
+                <div style="font-size:16px;font-weight:500">{{ d.name }}</div>
+                <div style="font-size:12px;color:var(--color-neutral-700)">{{ d.classLabel }}</div>
+              </div>
+              <div style="font-size:15px;{{ d.style }}">{{ d.dose }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:14px 20px"><a href="Drug-Dosing.dc.html" style="font-size:14px;text-decoration:none">Full dosing lookup, all drug classes &rarr;</a></div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ !hasResult }}" hint-placeholder-val="{{ true }}">
+      <div style="border:1px dashed var(--color-neutral-400);padding:24px;font-size:15px;color:var(--color-neutral-700);margin-bottom:16px">Enter age, sex and creatinine to calculate.</div>
+    </sc-if>
+    <p style="margin:0 0 40px;font-size:13px;color:var(--color-neutral-700)">Estimated by the 2021 CKD-EPI creatinine equation (race-free). Corroborate with a formal lab eGFR before a dosing decision.</p>
+
+    <p style="margin:40px 0 0;font-size:13px;color:var(--color-neutral-700)">Not a substitute for the detail sheets &mdash; use this page to find where to look, then read the full guidance.</p>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-neutral-400);padding:20px 40px;font-size:12px;color:var(--color-neutral-700);display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between">
+    <span>For medical education. Clinical decisions remain the responsibility of the treating physician.</span>
+    <span>UACR, urine albumin-creatinine ratio</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CALC_DRUGS = [
+  { name: "Metformin", classLabel: "Biguanide", bands: [[45, Infinity, "Usual dose, max 2,000 mg/day", "ok"], [30, 45, "Max 1,000 mg/day; do not start new therapy", "warn"], [0, 30, "Avoid", "danger"]] },
+  { name: "Sitagliptin", classLabel: "DPP-4 inhibitor", bands: [[45, Infinity, "100 mg once daily", "ok"], [30, 45, "50 mg once daily", "warn"], [0, 30, "25 mg once daily", "warn"]] },
+  { name: "Empagliflozin", classLabel: "SGLT2 inhibitor", bands: [[20, Infinity, "10 mg once daily; continue for kidney/heart protection", "ok"], [0, 20, "Do not initiate", "danger"]] },
+  { name: "Dapagliflozin", classLabel: "SGLT2 inhibitor", bands: [[25, Infinity, "10 mg once daily; continue for CKD/heart-failure benefit", "ok"], [0, 25, "Do not initiate", "danger"]] },
+  { name: "Spironolactone", classLabel: "Mineralocorticoid antagonist", bands: [[59, Infinity, "Usual dose", "ok"], [30, 59, "Use with caution, frequent potassium checks", "warn"], [0, 30, "Avoid — hyperkalemia risk", "danger"]] },
+  { name: "Enalapril / Lisinopril", classLabel: "ACE inhibitor", bands: [[30, Infinity, "Usual dose", "ok"], [0, 30, "Start at half the usual dose, titrate slowly", "warn"]] }
+];
+
+class Component extends DCLogic {
+  state = { age: "", sex: "F", scr: "", uacr: "" };
+
+  swatch(active) {
+    return "cursor:pointer;font-family:var(--font-heading);font-size:15px;padding:10px;border:1px solid " +
+      (active ? "var(--color-accent-700)" : "var(--color-neutral-400)") + ";background:" +
+      (active ? "var(--color-accent-700)" : "#fff") + ";color:" + (active ? "var(--color-neutral-100)" : "var(--color-text)");
+  }
+
+  computeEgfr(age, sex, scr) {
+    const k = sex === "F" ? 0.7 : 0.9;
+    const a = sex === "F" ? (scr <= k ? -0.241 : -1.2) : (scr <= k ? -0.302 : -1.2);
+    const sexFactor = sex === "F" ? 1.012 : 1;
+    return 142 * Math.pow(scr / k, a) * Math.pow(0.9938, age) * sexFactor;
+  }
+
+  gCategory(egfr) {
+    if (egfr >= 90) return { label: "G1", desc: "Normal or high" };
+    if (egfr >= 60) return { label: "G2", desc: "Mildly decreased" };
+    if (egfr >= 45) return { label: "G3a", desc: "Mild to moderate" };
+    if (egfr >= 30) return { label: "G3b", desc: "Moderate to severe" };
+    if (egfr >= 15) return { label: "G4", desc: "Severely decreased" };
+    return { label: "G5", desc: "Kidney failure" };
+  }
+
+  aCategory(uacr) {
+    if (uacr < 30) return { label: "A1", desc: "Normal to mildly increased" };
+    if (uacr <= 300) return { label: "A2", desc: "Moderately increased" };
+    return { label: "A3", desc: "Severely increased" };
+  }
+
+  badgeStyle(level) {
+    const bg = level === 3 ? "var(--color-accent-700)" : level === 2 ? "var(--color-accent-200)" : "var(--color-accent-100)";
+    const fg = level === 3 ? "var(--color-neutral-100)" : "var(--color-accent-800)";
+    return "padding:10px 16px;background:" + bg + ";color:" + fg + ";min-width:140px";
+  }
+
+  renderVals() {
+    const st = this.state;
+    const age = parseFloat(st.age), scr = parseFloat(st.scr), uacr = parseFloat(st.uacr);
+    const hasResult = !!(age > 0 && scr > 0);
+
+    let egfrText = "", gLabel = "", gDesc = "", gBadgeStyle = "", aLabel = "", aDesc = "", aBadgeStyle = "";
+    let hasReferral = false, referralText = "", doseFlags = [];
+
+    if (hasResult) {
+      const egfr = this.computeEgfr(age, st.sex, scr);
+      egfrText = egfr >= 999 ? ">999" : egfr.toFixed(0);
+      const g = this.gCategory(egfr);
+      gLabel = g.label; gDesc = g.desc;
+      const gLevel = (g.label === "G4") ? 2 : (g.label === "G5") ? 3 : 1;
+      gBadgeStyle = this.badgeStyle(gLevel);
+
+      if (g.label === "G4") { hasReferral = true; referralText = "CKD G4 → refer to Nephrology OPD 9"; }
+      if (g.label === "G5") { hasReferral = true; referralText = "CKD G5 → refer to Nephrology OPD 26"; }
+
+      doseFlags = CALC_DRUGS.map(d => {
+        const b = d.bands.find(band => egfr >= band[0] && egfr < band[1]) || d.bands[d.bands.length - 1];
+        const color = b[3] === "danger" ? "color:#a33;font-weight:500" : b[3] === "warn" ? "color:var(--color-accent-800);font-weight:500" : "";
+        return { name: d.name, classLabel: d.classLabel, dose: b[2], style: color };
+      });
+    }
+
+    const hasUacr = uacr >= 0 && !isNaN(uacr);
+    if (hasUacr) {
+      const a = this.aCategory(uacr);
+      aLabel = a.label; aDesc = a.desc;
+      aBadgeStyle = this.badgeStyle(a.label === "A3" ? 3 : a.label === "A2" ? 2 : 1);
+    }
+
+    return {
+      age: st.age, onAge: e => this.setState({ age: e.target.value }),
+      scr: st.scr, onScr: e => this.setState({ scr: e.target.value }),
+      uacr: st.uacr, onUacr: e => this.setState({ uacr: e.target.value }),
+      maleStyle: this.swatch(st.sex === "M"), femaleStyle: this.swatch(st.sex === "F"),
+      pickMale: () => this.setState({ sex: "M" }), pickFemale: () => this.setState({ sex: "F" }),
+      hasResult, egfrText, gLabel, gDesc, gBadgeStyle,
+      hasUacr, aLabel, aDesc, aBadgeStyle,
+      hasReferral, referralText, doseFlags
+    };
+  }
+}
+</script>
+</body>
+</html>
